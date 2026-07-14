@@ -1,0 +1,316 @@
+// Gera curriculo-pt.pdf e curriculo-en.pdf (A4, max 2 paginas) via Chrome headless
+const path = require('path');
+const fs = require('fs');
+
+const ASSETS = 'C:\\Users\\frps2\\Projetos\\site_portifolio_fullstack\\backend\\assets';
+
+const data = {
+  pt: {
+    title: 'Engenheiro da Computação · Desenvolvedor Full-Stack',
+    contact: 'São Paulo, Brasil · frps2003@gmail.com · github.com/Comunalti',
+    labels: {
+      summary: 'Resumo',
+      experience: 'Experiência Profissional',
+      projects: 'Projetos em Destaque',
+      education: 'Formação',
+      academic: 'Atividades Acadêmicas',
+      hard: 'Hard Skills',
+      soft: 'Soft Skills',
+      langs: 'Idiomas',
+      present: 'atual',
+    },
+    summary:
+      'Engenheiro da Computação (Instituto Mauá de Tecnologia, 2025) com 3+ anos de experiência na indústria construindo plataformas web distribuídas, pipelines de IA e ferramentas internas de ponta a ponta — do deploy ao pixel. Especialista em sistemas data-driven: engines e plataformas que pessoas sem conhecimento técnico conseguem configurar e estender sem alterar código-fonte. Base sólida em desenvolvimento de jogos (Unity, shaders, geração procedural) aplicada à engenharia de software de alta qualidade.',
+    experience: [
+      {
+        role: 'Desenvolvedor Full-Stack',
+        org: 'Intelicity',
+        period: 'dez 2024 — atual',
+        bullets: [
+          'Co-reescrevi o núcleo de processamento de imagens com IA da empresa como sistema distribuído: containers, orquestração e mensageria com RabbitMQ.',
+          'Reescrevi a plataforma de classificação de imagens com Flutter (cliente), FastAPI (backend) e MongoDB: download paralelo de imagens, modo único flexível de classificação e gestão 100% por interface gráfica.',
+          'Desenvolvi sozinho, de ponta a ponta (deploy, Docker, frontend, backend, banco), uma plataforma para prefeituras registrarem, consultarem e auditarem obras em vias urbanas: usuários, roles, permissões, controle de acesso por página/funcionalidade e jobs agendados disparados por eventos — tudo configurável dinamicamente pela interface.',
+        ],
+      },
+      {
+        role: 'Estagiário — IA & Cidades Inteligentes',
+        org: 'Intelicity',
+        period: 'mar 2023 — dez 2024',
+        bullets: [
+          'Pipelines de visão computacional em Python: detecção e classificação de objetos em milhares de imagens, com dados georreferenciados em PostgreSQL.',
+          'Criei o SGC (Sistema Geral de Classificação), ferramenta interna de classificação de imagens (Unity/C#) com login por usuário, comunicação em tempo real via APIs e 4 modos de classificação configuráveis — substituindo um fluxo manual de ZIPs.',
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: 'Engine de jogo de luta data-driven (TCC)',
+        desc: 'Engine em Unity/C# que lê regras de XML externo e cria personagens de forma declarativa, sem recompilação; máquina de estados serializada + editor visual. Colaboração com TCC de Design (Iralem Studios).',
+      },
+      {
+        name: 'Portfolio full-stack bilíngue',
+        desc: 'React + Node + TypeScript em Docker Compose, conteúdo PT/EN servido por API e shader WebGL/GLSL interativo de fundo.',
+      },
+    ],
+    education: [
+      {
+        degree: 'Bacharelado em Engenharia da Computação',
+        org: 'Instituto Mauá de Tecnologia',
+        period: '2021 — 2025',
+      },
+      {
+        degree: 'Técnico em Mecatrônica (integrado ao Ensino Médio)',
+        org: 'ETEC Júlio de Mesquita',
+        period: '2018 — 2020',
+      },
+    ],
+    academic: [
+      'Aluno monitor de Desenvolvimento de Jogos (2023–2024): ensinei Unity, SOLID, DRY e design patterns a calouros; aulas de shaders (HLSL, CG/ShaderLab, GLSL) e GPGPU com compute shaders; workshops de geração procedural (wave function collapse, perlin noise).',
+      'Nawat Games — entidade estudantil de desenvolvimento de jogos: membro (2022), presidente (2024); jogos em Unity/C# publicados no itch.io, liderando equipes multidisciplinares de alunos.',
+    ],
+    hard: [
+      ['Linguagens', 'TypeScript/JavaScript, Python, C#, Dart, SQL, HLSL/GLSL'],
+      ['Backend', 'Node.js, Express, FastAPI, REST APIs, RabbitMQ, WebSockets'],
+      ['Frontend', 'React, Vite, Flutter, HTML/CSS, WebGL'],
+      ['Dados', 'PostgreSQL (incl. dados georreferenciados), MongoDB'],
+      ['DevOps', 'Docker, Docker Compose, orquestração de containers, CI/CD, Linux, Git'],
+      ['IA & Visão', 'Visão computacional, classificação/detecção de objetos, anotação de dados'],
+      ['Jogos & Gráficos', 'Unity, engines data-driven, compute shaders, geração procedural (WFC, Perlin)'],
+      ['Arquitetura', 'Sistemas distribuídos, mensageria, RBAC, design patterns (GoF), SOLID, DRY'],
+    ],
+    soft: [
+      'Liderança (presidente de entidade estudantil)',
+      'Didática e mentoria (monitor com bolsa por 2 anos)',
+      'Ownership de ponta a ponta (plataforma inteira solo)',
+      'Colaboração interdisciplinar (engenharia + design)',
+      'Resolução pragmática de problemas',
+      'Aprendizado contínuo e autodidata',
+      'Comunicação técnica clara',
+      'Visão de produto para usuários não técnicos',
+    ],
+    langs: ['Português — nativo', 'Inglês — profissional (leitura, escrita e documentação técnica)'],
+  },
+
+  en: {
+    title: 'Computer Engineer · Full-Stack Developer',
+    contact: 'São Paulo, Brazil · frps2003@gmail.com · github.com/Comunalti',
+    labels: {
+      summary: 'Summary',
+      experience: 'Professional Experience',
+      projects: 'Highlighted Projects',
+      education: 'Education',
+      academic: 'Academic Activities',
+      hard: 'Hard Skills',
+      soft: 'Soft Skills',
+      langs: 'Languages',
+      present: 'present',
+    },
+    summary:
+      'Computer Engineer (Instituto Mauá de Tecnologia, 2025) with 3+ years of industry experience building distributed web platforms, AI pipelines and internal tools end to end — from deployment to pixels. Specialist in data-driven systems: engines and platforms that non-technical people can configure and extend without touching source code. Solid game development background (Unity, shaders, procedural generation) applied to high-quality software engineering.',
+    experience: [
+      {
+        role: 'Full-Stack Developer',
+        org: 'Intelicity',
+        period: 'Dec 2024 — present',
+        bullets: [
+          "Co-rewrote the company's core AI image-processing pipeline as a distributed system: containers, orchestration and RabbitMQ messaging.",
+          'Rebuilt the image classification platform with Flutter (client), FastAPI (backend) and MongoDB: parallel image downloads, a single flexible classification mode and 100% GUI-based management.',
+          'Single-handedly built, end to end (deploy, Docker, frontend, backend, database), a platform for city governments to register, browse and audit urban roadwork: users, roles, permissions, per-page/per-feature access control and event-triggered scheduled jobs — all dynamically configurable through the UI.',
+        ],
+      },
+      {
+        role: 'Intern — AI & Smart Cities',
+        org: 'Intelicity',
+        period: 'Mar 2023 — Dec 2024',
+        bullets: [
+          'Computer vision pipelines in Python: object detection and classification across thousands of images, with georeferenced data in PostgreSQL.',
+          'Created SGC (Sistema Geral de Classificação — General Classification System), an internal image classification tool (Unity/C#) with per-user login, real-time API communication and 4 configurable classification modes — replacing a manual ZIP-based workflow.',
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: 'Data-driven fighting game engine (Thesis)',
+        desc: 'Unity/C# engine that reads rules from an external XML file and builds characters declaratively, with zero recompilation; serialized state machine + visual editor. Built with a partner Design thesis team (Iralem Studios).',
+      },
+      {
+        name: 'Bilingual full-stack portfolio',
+        desc: 'React + Node + TypeScript on Docker Compose, PT/EN content served via API and an interactive WebGL/GLSL background shader.',
+      },
+    ],
+    education: [
+      {
+        degree: 'B.Sc. in Computer Engineering',
+        org: 'Instituto Mauá de Tecnologia',
+        period: '2021 — 2025',
+      },
+      {
+        degree: 'Mechatronics Technician (integrated with high school)',
+        org: 'ETEC Júlio de Mesquita',
+        period: '2018 — 2020',
+      },
+    ],
+    academic: [
+      'Game Development teaching assistant (2023–2024): taught Unity, SOLID, DRY and design patterns to freshmen; lectured on shaders (HLSL, CG/ShaderLab, GLSL) and GPGPU with compute shaders; ran procedural generation workshops (wave function collapse, perlin noise).',
+      'Nawat Games — game development student organization: member (2022), president (2024); Unity/C# games published on itch.io, leading multidisciplinary student teams.',
+    ],
+    hard: [
+      ['Languages', 'TypeScript/JavaScript, Python, C#, Dart, SQL, HLSL/GLSL'],
+      ['Backend', 'Node.js, Express, FastAPI, REST APIs, RabbitMQ, WebSockets'],
+      ['Frontend', 'React, Vite, Flutter, HTML/CSS, WebGL'],
+      ['Data', 'PostgreSQL (incl. georeferenced data), MongoDB'],
+      ['DevOps', 'Docker, Docker Compose, container orchestration, CI/CD, Linux, Git'],
+      ['AI & Vision', 'Computer vision, object detection/classification, data annotation'],
+      ['Games & Graphics', 'Unity, data-driven engines, compute shaders, procedural generation (WFC, Perlin)'],
+      ['Architecture', 'Distributed systems, messaging, RBAC, design patterns (GoF), SOLID, DRY'],
+    ],
+    soft: [
+      'Leadership (student organization president)',
+      'Teaching and mentoring (2 years as a scholarship TA)',
+      'End-to-end ownership (entire platform built solo)',
+      'Cross-disciplinary collaboration (engineering + design)',
+      'Pragmatic problem solving',
+      'Continuous, self-driven learning',
+      'Clear technical communication',
+      'Product thinking for non-technical users',
+    ],
+    langs: ['Portuguese — native', 'English — professional (technical reading, writing and documentation)'],
+  },
+};
+
+function html(d) {
+  return `<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @page { size: A4; margin: 13mm 14mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #1c2333; font-size: 9.6pt; line-height: 1.45; background: #fff; }
+  a { color: inherit; text-decoration: none; }
+
+  .name { font-size: 21pt; font-weight: 700; letter-spacing: 0.5px; color: #141a2a; }
+  .name b { color: #c2185b; font-weight: 700; }
+  .title { font-size: 11pt; color: #444e66; margin-top: 2px; }
+  .contact { font-size: 8.8pt; color: #5a6478; margin-top: 5px; }
+  .rule { height: 2.5px; background: linear-gradient(90deg, #c2185b 0 90px, #1c9ec9 90px 180px, #d9dde6 180px 100%); margin: 9px 0 12px; }
+
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.4px; color: #c2185b;
+       border-bottom: 1px solid #e3e6ee; padding-bottom: 3px; margin: 12px 0 7px; }
+  section { break-inside: avoid-page; }
+  section.allow-break { break-inside: auto; }
+
+  .job { margin-bottom: 8px; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-role { font-weight: 700; font-size: 10.3pt; }
+  .job-org { color: #1c9ec9; font-weight: 600; }
+  .job-period { color: #5a6478; font-size: 8.8pt; white-space: nowrap; }
+  ul { padding-left: 14px; margin-top: 3px; }
+  li { margin-bottom: 2.5px; }
+
+  .proj { margin-bottom: 5px; }
+  .proj b { color: #141a2a; }
+
+  .edu { display: flex; justify-content: space-between; margin-bottom: 4px; }
+
+  table.skills { width: 100%; border-collapse: collapse; }
+  table.skills td { padding: 2px 0; vertical-align: top; }
+  table.skills td.k { width: 118px; font-weight: 700; color: #141a2a; padding-right: 8px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 4px 5px; }
+  .chip { border: 1px solid #d3d8e3; border-left: 3px solid #1c9ec9; padding: 2px 7px; border-radius: 3px;
+          font-size: 8.8pt; color: #2a3348; background: #f7f8fb; }
+
+  .langs { display: flex; gap: 24px; }
+</style></head>
+<body>
+  <header>
+    <div class="name">FELIPE RODRIGUES PEIXOTO DA SILVA</div>
+    <div class="title">${d.title}</div>
+    <div class="contact">${d.contact}</div>
+    <div class="rule"></div>
+  </header>
+
+  <section>
+    <h2>${d.labels.summary}</h2>
+    <p>${d.summary}</p>
+  </section>
+
+  <section class="allow-break">
+    <h2>${d.labels.experience}</h2>
+    ${d.experience
+      .map(
+        (e) => `<div class="job">
+      <div class="job-head"><span class="job-role">${e.role} · <span class="job-org">${e.org}</span></span>
+      <span class="job-period">${e.period}</span></div>
+      <ul>${e.bullets.map((b) => `<li>${b}</li>`).join('')}</ul>
+    </div>`,
+      )
+      .join('')}
+  </section>
+
+  <section>
+    <h2>${d.labels.projects}</h2>
+    ${d.projects.map((p) => `<p class="proj"><b>${p.name}</b> — ${p.desc}</p>`).join('')}
+  </section>
+
+  <section>
+    <h2>${d.labels.education}</h2>
+    ${d.education
+      .map(
+        (e) => `<div class="edu"><span><b>${e.degree}</b> · <span class="job-org">${e.org}</span></span>
+        <span class="job-period">${e.period}</span></div>`,
+      )
+      .join('')}
+  </section>
+
+  <section>
+    <h2>${d.labels.academic}</h2>
+    <ul>${d.academic.map((a) => `<li>${a}</li>`).join('')}</ul>
+  </section>
+
+  <section>
+    <h2>${d.labels.hard}</h2>
+    <table class="skills">${d.hard
+      .map(([k, v]) => `<tr><td class="k">${k}</td><td>${v}</td></tr>`)
+      .join('')}</table>
+  </section>
+
+  <section>
+    <h2>${d.labels.soft}</h2>
+    <div class="chips">${d.soft.map((s) => `<span class="chip">${s}</span>`).join('')}</div>
+  </section>
+
+  <section>
+    <h2>${d.labels.langs}</h2>
+    <div class="langs">${d.langs.map((l) => `<span>${l}</span>`).join('')}</div>
+  </section>
+</body></html>`;
+}
+
+(async () => {
+  const puppeteer = (await import('puppeteer-core')).default;
+  const browser = await puppeteer.launch({
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    headless: 'new',
+    args: ['--no-sandbox'],
+  });
+  for (const lang of ['pt', 'en']) {
+    const page = await browser.newPage();
+    const content = html(data[lang]);
+    fs.writeFileSync(path.join(__dirname, `resume_${lang}.html`), content);
+    await page.setContent(content, { waitUntil: 'load' });
+    await page.pdf({
+      path: path.join(ASSETS, `curriculo-${lang}.pdf`),
+      format: 'A4',
+      printBackground: true,
+    });
+    // screenshot da versao HTML para inspecao visual
+    await page.setViewport({ width: 900, height: 1272 });
+    await page.screenshot({ path: path.join(__dirname, `resume_${lang}.png`), fullPage: true });
+    await page.close();
+    console.log(`gerado curriculo-${lang}.pdf`);
+  }
+  await browser.close();
+})().catch((e) => {
+  console.error('FAIL:', e.message);
+  process.exit(1);
+});

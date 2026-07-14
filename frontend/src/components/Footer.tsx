@@ -1,0 +1,46 @@
+import { api, type ApiState } from '../api/client';
+import type { Profile } from '../api/types';
+import { useReveal } from '../hooks/useReveal';
+import { UI, useLang } from '../i18n/LangContext';
+
+export function Footer({ profile }: { profile: ApiState<Profile> }) {
+  const ref = useReveal<HTMLDivElement>();
+  const { lang } = useLang();
+  const t = UI[lang];
+  const p = profile.data;
+  const year = new Date().getFullYear();
+
+  return (
+    <footer id="contato" className="footer">
+      <div className="container">
+        <div className="footer-cta reveal" ref={ref}>
+          <span className="section-num">05 / {t.sectionContact}</span>
+          <h2 className="footer-title">{t.ctaTitle}</h2>
+          <p className="footer-subtitle">{t.ctaSubtitle}</p>
+          <a className="footer-email" href={`mailto:${p?.email ?? ''}`}>
+            {p?.email ?? '...'}
+          </a>
+          <div className="hero-actions" style={{ marginTop: 0, justifyContent: 'center' }}>
+            <a className="btn btn-pink" href={`mailto:${p?.email ?? ''}`}>
+              ▸ {t.sendEmail}
+            </a>
+            <a className="btn" href={api.resumeUrl(lang)} download>
+              ↓ {t.downloadResume}
+            </a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© {year} {p?.name ?? 'Felipe Rodrigues Peixoto da Silva'}</span>
+          <div className="footer-links">
+            {(p?.links ?? []).map((l) => (
+              <a key={l.label} href={l.url} target="_blank" rel="noreferrer">
+                {l.label} ↗
+              </a>
+            ))}
+          </div>
+          <span>{t.stack}</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
