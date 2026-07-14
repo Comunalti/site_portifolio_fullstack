@@ -25,7 +25,7 @@ const gamerPt = {
     langs: 'Idiomas',
   },
   summary:
-    'Engenheiro da Computação (Instituto Mauá de Tecnologia, 2025) com 3+ anos de experiência na indústria construindo plataformas web distribuídas, pipelines de IA e ferramentas internas de ponta a ponta — do deploy ao pixel. Especialista em sistemas data-driven: engines e plataformas que pessoas sem conhecimento técnico conseguem configurar e estender sem alterar código-fonte. Base sólida em desenvolvimento de jogos (Unity, shaders, geração procedural) aplicada à engenharia de software de alta qualidade.',
+    'Engenheiro da Computação (Instituto Mauá de Tecnologia, 2025) com 3+ anos de experiência na indústria construindo plataformas web distribuídas, pipelines de IA e ferramentas internas de ponta a ponta — do deploy ao pixel. Minha experiência profissional mais recente foi na Intelicity, de mar 2023 a jul 2026. Especialista em sistemas data-driven: engines e plataformas que pessoas sem conhecimento técnico conseguem configurar e estender sem alterar código-fonte.',
   experience: [
     {
       role: 'Desenvolvedor Full-Stack',
@@ -112,7 +112,7 @@ const gamerEn = {
     langs: 'Languages',
   },
   summary:
-    'Computer Engineer (Instituto Mauá de Tecnologia, 2025) with 3+ years of industry experience building distributed web platforms, AI pipelines and internal tools end to end — from deployment to pixels. Specialist in data-driven systems: engines and platforms that non-technical people can configure and extend without touching source code. Solid game development background (Unity, shaders, procedural generation) applied to high-quality software engineering.',
+    'Computer Engineer (Instituto Mauá de Tecnologia, 2025) with 3+ years of industry experience building distributed web platforms, AI pipelines and internal tools end to end — from deployment to pixels. My most recent professional experience was at Intelicity, from Mar 2023 to Jul 2026. Specialist in data-driven systems that non-technical people can configure and extend without touching source code.',
   experience: [
     {
       role: 'Full-Stack Developer',
@@ -191,7 +191,7 @@ const formalPt = {
   accent2: '#33608d',
   title: 'Desenvolvedor Full-Stack · IA Aplicada',
   summary:
-    'Desenvolvedor full-stack com mais de 3 anos de indústria construindo plataformas web completas: APIs em Node e Python, bancos relacionais e não relacionais, filas de mensageria, containers e interfaces em React e Flutter. Engenheiro da Computação (Instituto Mauá de Tecnologia, 2025). Código guiado por SOLID, DRY e design patterns, com foco em sistemas administráveis por interface, que reduzem a dependência operacional de desenvolvedores. Além do código: dois anos ensinando boas práticas como monitor bolsista e um mandato como presidente de organização estudantil, liderando equipes multidisciplinares.',
+    'Desenvolvedor full-stack com mais de 3 anos de indústria construindo plataformas web completas: APIs em Node e Python, bancos relacionais e não relacionais, mensageria, containers e interfaces em React e Flutter. Experiência profissional mais recente na Intelicity, de mar 2023 a jul 2026. Engenheiro da Computação (Instituto Mauá de Tecnologia, 2025), com código guiado por SOLID, DRY e design patterns, dois anos de mentoria técnica e experiência liderando equipes multidisciplinares.',
   experience: [
     {
       role: 'Desenvolvedor Full-Stack',
@@ -255,7 +255,7 @@ const formalEn = {
   accent2: '#33608d',
   title: 'Full-Stack Developer · Applied AI',
   summary:
-    'Full-stack developer with 3+ years in industry building complete web platforms: APIs in Node and Python, relational and non-relational databases, message queues, containers and interfaces in React and Flutter. Computer Engineer (Instituto Mauá de Tecnologia, 2025). Code guided by SOLID, DRY and design patterns, focused on UI-administrable systems that reduce operational dependency on developers. Beyond code: two years teaching best practices as a scholarship TA and a term as student organization president, leading multidisciplinary teams.',
+    'Full-stack developer with 3+ years in industry building complete web platforms: APIs in Node and Python, relational and non-relational databases, messaging, containers and interfaces in React and Flutter. Most recent professional experience at Intelicity, from Mar 2023 to Jul 2026. Computer Engineer (Instituto Mauá de Tecnologia, 2025), with code guided by SOLID, DRY and design patterns, two years of technical mentoring and experience leading multidisciplinary teams.',
   experience: [
     {
       role: 'Full-Stack Developer',

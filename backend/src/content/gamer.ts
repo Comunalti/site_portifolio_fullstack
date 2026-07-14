@@ -13,8 +13,9 @@ const pt: SiteContent = {
     tagline:
       'Do shader ao servidor: construo engines, plataformas e ferramentas que outras pessoas conseguem estender sem tocar no código.',
     bio: [
-      'Nascido em 2003, formado em Engenharia da Computação pelo Instituto Mauá de Tecnologia (2025) e técnico em Mecatrônica pela ETEC Júlio de Mesquita (2020). Comecei nos jogos — Unity, C#, shaders, geração procedural — e hoje aplico essa mesma engenharia em plataformas web distribuídas com IA, filas e containers.',
-      'Minha marca registrada: sistemas data-driven. Uma engine de luta que cria personagens a partir de XML, ferramentas de classificação configuráveis por interface gráfica, plataformas onde quem não programa consegue customizar tudo. Software bom é software que os outros conseguem moldar.',
+      'Sou engenheiro da Computação, formado pelo Instituto Mauá de Tecnologia, e técnico em Mecatrônica pela ETEC Júlio de Mesquita. Minha trajetória começou pelo desenvolvimento de jogos, onde aprendi a combinar lógica, desempenho e experiência visual com Unity, C#, shaders e geração procedural. Essa base evoluiu para plataformas web distribuídas, integrações de IA, mensageria e containers.',
+      'Gosto de transformar problemas difíceis em ferramentas simples de usar. Minha marca são sistemas data-driven: engines que interpretam regras externas, fluxos administrados por interface e produtos que pessoas sem conhecimento técnico conseguem adaptar sem depender de uma nova entrega de código.',
+      'Minha experiência profissional mais recente foi na Intelicity, de março de 2023 a julho de 2026. Nesse período, saí de pipelines de visão computacional para assumir produtos completos de ponta a ponta. Agora busco um novo time em que eu possa unir engenharia sólida, criatividade e autonomia para construir algo relevante.',
     ],
     location: 'São Paulo, Brasil',
     email: 'frps2003@gmail.com',
@@ -227,8 +228,9 @@ const en: SiteContent = {
     tagline:
       'From shaders to servers: I build engines, platforms and tools that other people can extend without touching the code.',
     bio: [
-      'Born in 2003, Computer Engineering graduate from Instituto Mauá de Tecnologia (2025) and Mechatronics technician from ETEC Júlio de Mesquita (2020). I started in games — Unity, C#, shaders, procedural generation — and today I apply that same engineering to distributed web platforms with AI, message queues and containers.',
-      'My trademark: data-driven systems. A fighting game engine that builds characters from XML, classification tools configured through a GUI, platforms where non-programmers can customize everything. Good software is software other people can shape.',
+      'I am a Computer Engineer from Instituto Mauá de Tecnologia and a Mechatronics technician from ETEC Júlio de Mesquita. My journey started in game development, where I learned to combine logic, performance and visual experience with Unity, C#, shaders and procedural generation. That foundation evolved into distributed web platforms, AI integrations, messaging and containers.',
+      'I enjoy turning difficult problems into tools that are simple to use. My trademark is data-driven systems: engines that interpret external rules, workflows managed through an interface and products that non-technical people can adapt without waiting for another code release.',
+      'My most recent professional experience was at Intelicity, from March 2023 to July 2026. During that time, I moved from computer-vision pipelines to owning complete products end to end. I am now looking for a new team where I can combine solid engineering, creativity and autonomy to build something meaningful.',
     ],
     location: 'São Paulo, Brazil',
     email: 'frps2003@gmail.com',
@@ -435,4 +437,3 @@ const en: SiteContent = {
 };
 
 export const gamer: Record<Lang, SiteContent> = { pt, en };
-

@@ -16,9 +16,9 @@ const pt: SiteContent = {
     tagline:
       'Do banco de dados à interface: plataformas web completas, com IA aplicada e código guiado por princípios — não por improviso.',
     bio: [
-      'Sou desenvolvedor full-stack com mais de 3 anos de indústria construindo plataformas web completas: APIs em Node e Python, bancos relacionais e não relacionais, filas de mensageria, containers e interfaces em React e Flutter. Formado em Engenharia da Computação pelo Instituto Mauá de Tecnologia (2025), trabalhei na Intelicity entre 2023 e julho de 2026 aplicando IA a serviços urbanos — da infraestrutura de processamento ao produto final.',
-      'O que me diferencia vai além do código. Passei dois anos como monitor bolsista ensinando SOLID, DRY e design patterns a alunos mais novos, e presidi uma organização estudantil liderando equipes multidisciplinares — experiências que me ensinaram a revisar código com empatia, nivelar equipes tecnicamente e transformar requisitos vagos em entregas concretas. Acredito que software de qualidade nasce de gente bem treinada e processos claros.',
-      'Encerrei meu ciclo na Intelicity em julho de 2026 e estou em busca do próximo desafio: um time onde eu possa construir produtos completos, elevar o padrão técnico e crescer junto.',
+      'Sou desenvolvedor full-stack com mais de 3 anos de indústria construindo plataformas web completas: APIs em Node e Python, bancos relacionais e não relacionais, mensageria, containers e interfaces em React e Flutter. Minha experiência profissional mais recente foi na Intelicity, de março de 2023 a julho de 2026, aplicando IA a serviços urbanos e participando de toda a cadeia — infraestrutura, dados, APIs e produto final.',
+      'Tenho perfil de ownership: gosto de entender o problema de negócio, transformar requisitos vagos em uma arquitetura clara e acompanhar a solução até o deploy. Dois anos como monitor bolsista ensinando SOLID, DRY e design patterns, somados à experiência como presidente de uma organização estudantil, fortaleceram minha comunicação, mentoria e liderança de equipes multidisciplinares.',
+      'Procuro um novo desafio em que eu possa construir produtos completos, elevar o padrão técnico do time e continuar crescendo. Valorizo ambientes com autonomia, colaboração honesta e espaço para tomar boas decisões de engenharia.',
     ],
     location: 'São Paulo, Brasil',
     email: 'frps2003@gmail.com',
@@ -217,9 +217,9 @@ const en: SiteContent = {
     tagline:
       'From database to interface: complete web platforms, with applied AI and code guided by principles — not improvisation.',
     bio: [
-      'I am a full-stack developer with 3+ years in industry building complete web platforms: APIs in Node and Python, relational and non-relational databases, message queues, containers and interfaces in React and Flutter. A Computer Engineering graduate from Instituto Mauá de Tecnologia (2025), I worked at Intelicity between 2023 and July 2026 applying AI to urban services — from the processing infrastructure to the final product.',
-      'What sets me apart goes beyond code. I spent two years as a scholarship teaching assistant, teaching SOLID, DRY and design patterns to younger students, and presided over a student organization leading multidisciplinary teams — experiences that taught me to review code with empathy, level teams up technically and turn vague requirements into concrete deliveries. I believe quality software comes from well-trained people and clear processes.',
-      'I closed my chapter at Intelicity in July 2026 and I am looking for the next challenge: a team where I can build complete products, raise the technical bar and grow together.',
+      'I am a full-stack developer with 3+ years in industry building complete web platforms: APIs in Node and Python, relational and non-relational databases, messaging, containers and interfaces in React and Flutter. My most recent professional experience was at Intelicity, from March 2023 to July 2026, applying AI to urban services across the entire chain — infrastructure, data, APIs and the final product.',
+      'I have a strong ownership mindset: I like to understand the business problem, turn vague requirements into a clear architecture and follow the solution through deployment. Two years as a scholarship teaching assistant covering SOLID, DRY and design patterns, combined with serving as president of a student organization, strengthened my communication, mentoring and multidisciplinary leadership.',
+      'I am looking for a new challenge where I can build complete products, raise the team’s technical bar and keep growing. I value environments with autonomy, honest collaboration and room to make sound engineering decisions.',
     ],
     location: 'São Paulo, Brazil',
     email: 'frps2003@gmail.com',
