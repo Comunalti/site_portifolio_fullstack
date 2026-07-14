@@ -1,5 +1,5 @@
 import { api, useApi } from './api/client';
-import { LangProvider, useLang, useVariant } from './i18n/LangContext';
+import { isResumeHubPath, LangProvider, useLang, useVariant } from './i18n/LangContext';
 import { ShaderBackground } from './components/ShaderBackground';
 import { Nav } from './components/Nav';
 import { Hero } from './components/Hero';
@@ -8,6 +8,7 @@ import { About } from './components/About';
 import { ProfessionalHistory, AcademicHistory } from './components/History';
 import { Sandboxes } from './components/Sandboxes';
 import { Footer } from './components/Footer';
+import { ResumeHub } from './components/ResumeHub';
 
 function Site() {
   const { lang } = useLang();
@@ -36,7 +37,7 @@ function Site() {
 export default function App() {
   return (
     <LangProvider>
-      <Site />
+      {isResumeHubPath() ? <ResumeHub /> : <Site />}
     </LangProvider>
   );
 }

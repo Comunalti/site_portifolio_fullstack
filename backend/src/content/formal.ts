@@ -1,4 +1,4 @@
-import type { Lang, SiteContent } from '../types.js';
+﻿import type { Lang, SiteContent } from '../types.js';
 
 // ============================================================
 // Variante FORMAL — texto próprio, escrito para processos
@@ -16,8 +16,9 @@ const pt: SiteContent = {
     tagline:
       'Do banco de dados à interface: plataformas web completas, com IA aplicada e código guiado por princípios — não por improviso.',
     bio: [
-      'Sou desenvolvedor full-stack com mais de 3 anos de indústria construindo plataformas web completas: APIs em Node e Python, bancos relacionais e não relacionais, filas de mensageria, containers e interfaces em React e Flutter. Formado em Engenharia da Computação pelo Instituto Mauá de Tecnologia (2025), trabalho na Intelicity aplicando IA a serviços urbanos — da infraestrutura de processamento ao produto final.',
+      'Sou desenvolvedor full-stack com mais de 3 anos de indústria construindo plataformas web completas: APIs em Node e Python, bancos relacionais e não relacionais, filas de mensageria, containers e interfaces em React e Flutter. Formado em Engenharia da Computação pelo Instituto Mauá de Tecnologia (2025), trabalhei na Intelicity entre 2023 e julho de 2026 aplicando IA a serviços urbanos — da infraestrutura de processamento ao produto final.',
       'O que me diferencia vai além do código. Passei dois anos como monitor bolsista ensinando SOLID, DRY e design patterns a alunos mais novos, e presidi uma organização estudantil liderando equipes multidisciplinares — experiências que me ensinaram a revisar código com empatia, nivelar equipes tecnicamente e transformar requisitos vagos em entregas concretas. Acredito que software de qualidade nasce de gente bem treinada e processos claros.',
+      'Encerrei meu ciclo na Intelicity em julho de 2026 e estou em busca do próximo desafio: um time onde eu possa construir produtos completos, elevar o padrão técnico e crescer junto.',
     ],
     location: 'São Paulo, Brasil',
     email: 'frps2003@gmail.com',
@@ -41,11 +42,11 @@ const pt: SiteContent = {
     professional: [
       {
         id: 'pro-intelicity-pleno',
-        period: 'dez 2024 — hoje',
+        period: 'dez 2024 — jul 2026',
         title: 'Desenvolvedor Full-Stack',
         organization: 'Intelicity',
         description:
-          'Atuo na evolução das plataformas web da empresa em três frentes. Na infraestrutura, trabalhei com a equipe de IA na migração do processamento de imagens para uma arquitetura distribuída — serviços containerizados, orquestração e RabbitMQ conectando as etapas do fluxo. No produto, reconstruí a plataforma de anotação de dados com Flutter, FastAPI e MongoDB, priorizando a experiência da equipe de operação: menos espera entre tarefas e administração completa por interface, sem depender de desenvolvedores. E no projeto de maior responsabilidade, entreguei sozinho uma plataforma de gestão de obras urbanas para prefeituras — da modelagem de dados ao deploy, passando por APIs, controle de acesso granular (usuários, roles, permissões por página e por funcionalidade) e automações disparadas por eventos, todas configuráveis pela própria interface.',
+          'Atuei na evolução das plataformas web da empresa em três frentes. Na infraestrutura, trabalhei com a equipe de IA na migração do processamento de imagens para uma arquitetura distribuída — serviços containerizados, orquestração e RabbitMQ conectando as etapas do fluxo. No produto, reconstruí a plataforma de anotação de dados com Flutter, FastAPI e MongoDB, priorizando a experiência da equipe de operação: menos espera entre tarefas e administração completa por interface, sem depender de desenvolvedores. E no projeto de maior responsabilidade, entreguei sozinho uma plataforma de gestão de obras urbanas para prefeituras — da modelagem de dados ao deploy, passando por APIs, controle de acesso granular (usuários, roles, permissões por página e por funcionalidade) e automações disparadas por eventos, todas configuráveis pela própria interface.',
         highlights: [
           'Entrega solo de plataforma completa: modelagem → APIs → deploy',
           'Controle de acesso granular (RBAC) configurável por interface',
@@ -216,8 +217,9 @@ const en: SiteContent = {
     tagline:
       'From database to interface: complete web platforms, with applied AI and code guided by principles — not improvisation.',
     bio: [
-      'I am a full-stack developer with 3+ years in industry building complete web platforms: APIs in Node and Python, relational and non-relational databases, message queues, containers and interfaces in React and Flutter. A Computer Engineering graduate from Instituto Mauá de Tecnologia (2025), I work at Intelicity applying AI to urban services — from the processing infrastructure to the final product.',
+      'I am a full-stack developer with 3+ years in industry building complete web platforms: APIs in Node and Python, relational and non-relational databases, message queues, containers and interfaces in React and Flutter. A Computer Engineering graduate from Instituto Mauá de Tecnologia (2025), I worked at Intelicity between 2023 and July 2026 applying AI to urban services — from the processing infrastructure to the final product.',
       'What sets me apart goes beyond code. I spent two years as a scholarship teaching assistant, teaching SOLID, DRY and design patterns to younger students, and presided over a student organization leading multidisciplinary teams — experiences that taught me to review code with empathy, level teams up technically and turn vague requirements into concrete deliveries. I believe quality software comes from well-trained people and clear processes.',
+      'I closed my chapter at Intelicity in July 2026 and I am looking for the next challenge: a team where I can build complete products, raise the technical bar and grow together.',
     ],
     location: 'São Paulo, Brazil',
     email: 'frps2003@gmail.com',
@@ -241,11 +243,11 @@ const en: SiteContent = {
     professional: [
       {
         id: 'pro-intelicity-pleno',
-        period: 'Dec 2024 — today',
+        period: 'Dec 2024 — Jul 2026',
         title: 'Full-Stack Developer',
         organization: 'Intelicity',
         description:
-          "I work on the evolution of the company's web platforms across three fronts. On infrastructure, I worked with the AI team to migrate image processing to a distributed architecture — containerized services, orchestration and RabbitMQ connecting the pipeline stages. On product, I rebuilt the data-annotation platform with Flutter, FastAPI and MongoDB, prioritizing the operations team's experience: less waiting between tasks and full administration through the interface, with no developer dependency. And on my highest-responsibility project, I single-handedly delivered an urban roadwork management platform for city governments — from data modeling to deployment, including APIs, granular access control (users, roles, per-page and per-feature permissions) and event-triggered automations, all configurable through the interface itself.",
+          "I worked on the evolution of the company's web platforms across three fronts. On infrastructure, I worked with the AI team to migrate image processing to a distributed architecture — containerized services, orchestration and RabbitMQ connecting the pipeline stages. On product, I rebuilt the data-annotation platform with Flutter, FastAPI and MongoDB, prioritizing the operations team's experience: less waiting between tasks and full administration through the interface, with no developer dependency. And on my highest-responsibility project, I single-handedly delivered an urban roadwork management platform for city governments — from data modeling to deployment, including APIs, granular access control (users, roles, per-page and per-feature permissions) and event-triggered automations, all configurable through the interface itself.",
         highlights: [
           'Solo delivery of a complete platform: modeling → APIs → deploy',
           'Granular access control (RBAC) configurable via UI',

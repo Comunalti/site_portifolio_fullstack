@@ -30,7 +30,7 @@ const gamerPt = {
     {
       role: 'Desenvolvedor Full-Stack',
       org: 'Intelicity',
-      period: 'dez 2024 — atual',
+      period: 'dez 2024 — jul 2026',
       bullets: [
         'Co-reescrevi o núcleo de processamento de imagens com IA da empresa como sistema distribuído: containers, orquestração e mensageria com RabbitMQ.',
         'Reescrevi a plataforma de classificação de imagens com Flutter (cliente), FastAPI (backend) e MongoDB: download paralelo de imagens, modo único flexível de classificação e gestão 100% por interface gráfica.',
@@ -93,7 +93,7 @@ const gamerPt = {
     'Comunicação técnica clara',
     'Visão de produto para usuários não técnicos',
   ],
-  langs: ['Português — nativo', 'Inglês — profissional (leitura, escrita e documentação técnica)'],
+  langs: ['Português — nativo', 'Inglês — fluente'],
 };
 
 const gamerEn = {
@@ -117,7 +117,7 @@ const gamerEn = {
     {
       role: 'Full-Stack Developer',
       org: 'Intelicity',
-      period: 'Dec 2024 — present',
+      period: 'Dec 2024 — Jul 2026',
       bullets: [
         "Co-rewrote the company's core AI image-processing pipeline as a distributed system: containers, orchestration and RabbitMQ messaging.",
         'Rebuilt the image classification platform with Flutter (client), FastAPI (backend) and MongoDB: parallel image downloads, a single flexible classification mode and 100% GUI-based management.',
@@ -180,7 +180,7 @@ const gamerEn = {
     'Clear technical communication',
     'Product thinking for non-technical users',
   ],
-  langs: ['Portuguese — native', 'English — professional (technical reading, writing and documentation)'],
+  langs: ['Portuguese — native', 'English — fluent'],
 };
 
 // ---------------- FORMAL (corporativo: full-stack, IA, SOLID, gestão) ----------------
@@ -196,7 +196,7 @@ const formalPt = {
     {
       role: 'Desenvolvedor Full-Stack',
       org: 'Intelicity',
-      period: 'dez 2024 — atual',
+      period: 'dez 2024 — jul 2026',
       bullets: [
         'Entreguei sozinho, de ponta a ponta (modelagem de dados, APIs, frontend, dockerização e deploy), uma plataforma de gestão de obras urbanas para prefeituras: controle de acesso granular (usuários, roles, permissões por página e por funcionalidade) e automações disparadas por eventos — tudo configurável pela interface administrativa, sem alteração de código.',
         'Reconstruí a plataforma de anotação de dados com Flutter, FastAPI e MongoDB: download paralelo de imagens, fluxo único flexível e administração 100% por interface, eliminando a dependência de desenvolvedores na operação.',
@@ -260,7 +260,7 @@ const formalEn = {
     {
       role: 'Full-Stack Developer',
       org: 'Intelicity',
-      period: 'Dec 2024 — present',
+      period: 'Dec 2024 — Jul 2026',
       bullets: [
         'Single-handedly delivered, end to end (data modeling, APIs, frontend, dockerization and deployment), an urban roadwork management platform for city governments: granular access control (users, roles, per-page and per-feature permissions) and event-triggered automations — all configurable through the admin interface, with zero code changes.',
         'Rebuilt the data-annotation platform with Flutter, FastAPI and MongoDB: parallel image downloads, a single flexible workflow and 100% UI-based administration, removing developer dependency from operations.',

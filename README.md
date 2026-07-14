@@ -1,8 +1,9 @@
 # Portfolio Full-Stack — Felipe Rodrigues Peixoto da Silva
 
-Site de portfólio pessoal com **duas skins por rota** e toggle **PT/EN**:
+Site de portfólio pessoal com uma página de seleção, **duas skins por rota** e toggle **PT/EN**:
 
-- **`/gamer-resume`** (e `/`): estética retro-gamer neon (azul + rosa, pixelado), fundo em
+- **`/`**: apresentação pessoal e cards para escolher ou copiar o link de cada currículo
+- **`/gamer-resume`**: estética retro-gamer neon (azul + rosa, pixelado), fundo em
   **shader WebGL/GLSL** que reage ao mouse e ao scroll — ênfase em jogos e criatividade
 - **`/formal-resume`**: skin corporativa (navy + branco, serif) — ênfase em full-stack, IA,
   SOLID/boas práticas e gestão de pessoas, pensada para recrutadores

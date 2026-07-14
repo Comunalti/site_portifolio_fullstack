@@ -45,9 +45,6 @@ export function Nav() {
               {l.label}
             </a>
           ))}
-          <a className="nav-variant-switch" href={t.switchVariantHref} title={t.switchVariant}>
-            {variant === 'gamer' ? '▤' : '🕹'} {t.switchVariant}
-          </a>
           <a className="btn btn-pink" href={api.resumeUrl(lang, variant)} download>
             ↓ {t.resume}
           </a>

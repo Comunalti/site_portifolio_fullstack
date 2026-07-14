@@ -2,8 +2,11 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from '
 import type { Lang, Variant } from '../api/types';
 
 // ---------- variante (skin) por rota ----------
-// /formal-resume → 'formal' · /gamer-resume ou / → 'gamer'
-// A variante é fixa por carregamento de página (trocar = navegação completa).
+// / é o seletor de currículos; cada currículo tem sua própria rota e skin.
+export function isResumeHubPath(pathname = window.location.pathname): boolean {
+  return (pathname.replace(/\/+$/, '') || '/') === '/';
+}
+
 export function getVariant(): Variant {
   return window.location.pathname.includes('formal') ? 'formal' : 'gamer';
 }
@@ -73,8 +76,6 @@ const gamerPt = {
   sendEmail: 'Enviar email',
   apiError: 'Falha ao falar com a API. O backend está rodando?',
   stack: 'React · Node · TypeScript · WebGL · Docker',
-  switchVariant: 'Modo formal',
-  switchVariantHref: '/formal-resume',
   logo: 'FELIPE.EXE',
   themeTitle: 'Alternar tema claro/escuro',
 };
@@ -106,8 +107,6 @@ const gamerEn: typeof gamerPt = {
   sendEmail: 'Send email',
   apiError: 'Failed to reach the API. Is the backend running?',
   stack: 'React · Node · TypeScript · WebGL · Docker',
-  switchVariant: 'Formal mode',
-  switchVariantHref: '/formal-resume',
   logo: 'FELIPE.EXE',
   themeTitle: 'Toggle light/dark theme',
 };
@@ -139,8 +138,6 @@ const formalPt: typeof gamerPt = {
   sendEmail: 'Enviar email',
   apiError: 'Falha ao falar com a API. O backend está rodando?',
   stack: 'React · Node · TypeScript · Docker',
-  switchVariant: 'Versão criativa',
-  switchVariantHref: '/gamer-resume',
   logo: 'Felipe Peixoto',
   themeTitle: 'Alternar tema claro/escuro',
 };
@@ -172,8 +169,6 @@ const formalEn: typeof gamerPt = {
   sendEmail: 'Send email',
   apiError: 'Failed to reach the API. Is the backend running?',
   stack: 'React · Node · TypeScript · Docker',
-  switchVariant: 'Creative version',
-  switchVariantHref: '/gamer-resume',
   logo: 'Felipe Peixoto',
   themeTitle: 'Toggle light/dark theme',
 };

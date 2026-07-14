@@ -38,7 +38,7 @@ const pt: SiteContent = {
     professional: [
       {
         id: 'pro-intelicity-pleno',
-        period: 'dez 2024 — hoje',
+        period: 'dez 2024 — jul 2026',
         title: 'Desenvolvedor Full-Stack',
         organization: 'Intelicity',
         description:
@@ -252,7 +252,7 @@ const en: SiteContent = {
     professional: [
       {
         id: 'pro-intelicity-pleno',
-        period: 'Dec 2024 — today',
+        period: 'Dec 2024 — Jul 2026',
         title: 'Full-Stack Developer',
         organization: 'Intelicity',
         description:
