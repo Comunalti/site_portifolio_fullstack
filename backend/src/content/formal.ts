@@ -16,9 +16,8 @@ const pt: SiteContent = {
     tagline:
       'Do banco de dados à interface: plataformas web completas, com IA aplicada e código guiado por princípios — não por improviso.',
     bio: [
-      'Sou desenvolvedor full-stack com mais de 3 anos de indústria construindo plataformas web completas: APIs em Node e Python, bancos relacionais e não relacionais, mensageria, containers e interfaces em React e Flutter. Minha experiência profissional mais recente foi na Intelicity, de março de 2023 a julho de 2026, aplicando IA a serviços urbanos e participando de toda a cadeia — infraestrutura, dados, APIs e produto final.',
-      'Tenho perfil de ownership: gosto de entender o problema de negócio, transformar requisitos vagos em uma arquitetura clara e acompanhar a solução até o deploy. Dois anos como monitor bolsista ensinando SOLID, DRY e design patterns, somados à experiência como presidente de uma organização estudantil, fortaleceram minha comunicação, mentoria e liderança de equipes multidisciplinares.',
-      'Procuro um novo desafio em que eu possa construir produtos completos, elevar o padrão técnico do time e continuar crescendo. Valorizo ambientes com autonomia, colaboração honesta e espaço para tomar boas decisões de engenharia.',
+      'Sou engenheiro da Computação pelo Instituto Mauá de Tecnologia e técnico em Mecatrônica pela ETEC Júlio de Mesquita. Ao longo de mais de três anos de experiência profissional, desenvolvi plataformas completas envolvendo interfaces em React e Flutter, APIs em Node e Python, bancos de dados, mensageria, containers e processamento com inteligência artificial.',
+      'Tenho preferência por sistemas configuráveis, extensíveis e simples de operar. Já construí desde engines orientadas a dados até plataformas administradas inteiramente por interface, permitindo que usuários não técnicos adaptem regras e fluxos sem depender de alterações no código. Para mim, boa engenharia transforma complexidade técnica em produtos claros, confiáveis e fáceis de evoluir.',
     ],
     location: 'São Paulo, Brasil',
     email: 'frps2003@gmail.com',
@@ -217,9 +216,8 @@ const en: SiteContent = {
     tagline:
       'From database to interface: complete web platforms, with applied AI and code guided by principles — not improvisation.',
     bio: [
-      'I am a full-stack developer with 3+ years in industry building complete web platforms: APIs in Node and Python, relational and non-relational databases, messaging, containers and interfaces in React and Flutter. My most recent professional experience was at Intelicity, from March 2023 to July 2026, applying AI to urban services across the entire chain — infrastructure, data, APIs and the final product.',
-      'I have a strong ownership mindset: I like to understand the business problem, turn vague requirements into a clear architecture and follow the solution through deployment. Two years as a scholarship teaching assistant covering SOLID, DRY and design patterns, combined with serving as president of a student organization, strengthened my communication, mentoring and multidisciplinary leadership.',
-      'I am looking for a new challenge where I can build complete products, raise the team’s technical bar and keep growing. I value environments with autonomy, honest collaboration and room to make sound engineering decisions.',
+      'I am a Computer Engineering graduate from Instituto Mauá de Tecnologia and a Mechatronics technician from ETEC Júlio de Mesquita. Throughout more than three years of professional experience, I have developed complete platforms involving React and Flutter interfaces, Node and Python APIs, databases, messaging, containers and artificial intelligence processing.',
+      'I am particularly interested in systems that are configurable, extensible and simple to operate. I have built everything from data-driven engines to platforms managed entirely through graphical interfaces, allowing non-technical users to adapt rules and workflows without requiring code changes. To me, good engineering turns technical complexity into products that are clear, reliable and easy to evolve.',
     ],
     location: 'São Paulo, Brazil',
     email: 'frps2003@gmail.com',
