@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok', uptime: process.uptime() });
+  res.json({ status: 'ok', service: 'portfolio-api', uptime: process.uptime() });
 });
 
 // Todas as rotas de conteúdo aceitam:
