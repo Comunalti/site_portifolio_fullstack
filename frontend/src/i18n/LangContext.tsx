@@ -76,6 +76,7 @@ const gamerPt = {
   switchVariant: 'Modo formal',
   switchVariantHref: '/formal-resume',
   logo: 'FELIPE.EXE',
+  themeTitle: 'Alternar tema claro/escuro',
 };
 
 const gamerEn: typeof gamerPt = {
@@ -108,6 +109,7 @@ const gamerEn: typeof gamerPt = {
   switchVariant: 'Formal mode',
   switchVariantHref: '/formal-resume',
   logo: 'FELIPE.EXE',
+  themeTitle: 'Toggle light/dark theme',
 };
 
 const formalPt: typeof gamerPt = {
@@ -140,6 +142,7 @@ const formalPt: typeof gamerPt = {
   switchVariant: 'Versão criativa',
   switchVariantHref: '/gamer-resume',
   logo: 'Felipe Peixoto',
+  themeTitle: 'Alternar tema claro/escuro',
 };
 
 const formalEn: typeof gamerPt = {
@@ -172,6 +175,7 @@ const formalEn: typeof gamerPt = {
   switchVariant: 'Creative version',
   switchVariantHref: '/gamer-resume',
   logo: 'Felipe Peixoto',
+  themeTitle: 'Toggle light/dark theme',
 };
 
 export const UI: Record<Variant, Record<Lang, typeof gamerPt>> = {

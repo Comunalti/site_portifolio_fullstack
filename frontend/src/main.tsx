@@ -9,7 +9,11 @@ import './styles/global.css';
 const variant = getVariant();
 document.body.classList.add(variant);
 if (variant === 'formal') {
-  document.title = 'Felipe Peixoto — Engenheiro de Software';
+  document.title = 'Felipe Peixoto — Desenvolvedor Full-Stack';
+  // aplica o tema salvo cedo para não piscar claro→escuro
+  if (localStorage.getItem('formal-theme') === 'dark') {
+    document.body.classList.add('dark');
+  }
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

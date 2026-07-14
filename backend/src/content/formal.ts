@@ -1,22 +1,23 @@
 import type { Lang, SiteContent } from '../types.js';
 
 // ============================================================
-// Variante FORMAL — pensada para recrutadores e entrevistadores
-// corporativos (bancos, grandes empresas). Ênfase em full-stack,
-// IA, princípios de engenharia (SOLID, boas práticas) e gestão
-// de pessoas. As conquistas com jogos aparecem reenquadradas
-// como experiência de engenharia e liderança.
+// Variante FORMAL — texto próprio, escrito para processos
+// seletivos corporativos (bancos, grandes empresas).
+// Posicionamento: desenvolvedor FULL-STACK com IA aplicada.
+// Soft skills em destaque: ensino/mentoria (monitoria) e
+// gestão de pessoas (presidência de organização estudantil).
+// Jogos aparecem apenas como contexto, de passagem.
 // ============================================================
 
 const pt: SiteContent = {
   profile: {
     name: 'Felipe Rodrigues Peixoto da Silva',
-    role: 'Engenheiro de Software · Full-Stack & IA',
+    role: 'Desenvolvedor Full-Stack',
     tagline:
-      'Plataformas robustas de ponta a ponta: arquitetura limpa, sistemas distribuídos e software que outras pessoas conseguem manter e estender.',
+      'Do banco de dados à interface: plataformas web completas, com IA aplicada e código guiado por princípios — não por improviso.',
     bio: [
-      'Engenheiro da Computação pelo Instituto Mauá de Tecnologia (2025), com mais de 3 anos de experiência na indústria construindo plataformas web distribuídas e pipelines de inteligência artificial. Atuo em todo o ciclo de desenvolvimento: requisitos, arquitetura, implementação, dockerização e deploy.',
-      'Trabalho orientado por princípios de engenharia — SOLID, DRY e design patterns — com foco em sistemas configuráveis por interface, que reduzem a dependência de programadores para tarefas operacionais. Tenho experiência prática em liderança e desenvolvimento de pessoas: presidi uma organização estudantil e fui monitor bolsista por dois anos, ensinando arquitetura de software e boas práticas a dezenas de alunos.',
+      'Sou desenvolvedor full-stack com mais de 3 anos de indústria construindo plataformas web completas: APIs em Node e Python, bancos relacionais e não relacionais, filas de mensageria, containers e interfaces em React e Flutter. Formado em Engenharia da Computação pelo Instituto Mauá de Tecnologia (2025), trabalho na Intelicity aplicando IA a serviços urbanos — da infraestrutura de processamento ao produto final.',
+      'O que me diferencia vai além do código. Passei dois anos como monitor bolsista ensinando SOLID, DRY e design patterns a alunos mais novos, e presidi uma organização estudantil liderando equipes multidisciplinares — experiências que me ensinaram a revisar código com empatia, nivelar equipes tecnicamente e transformar requisitos vagos em entregas concretas. Acredito que software de qualidade nasce de gente bem treinada e processos claros.',
     ],
     location: 'São Paulo, Brasil',
     email: 'frps2003@gmail.com',
@@ -25,14 +26,14 @@ const pt: SiteContent = {
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/felipe-rodrigues-peixoto-da-silva-501919209/' },
     ],
     skills: [
-      'TypeScript', 'React', 'Node.js', 'Python', 'FastAPI', 'Docker',
-      'RabbitMQ', 'PostgreSQL', 'MongoDB', 'Flutter', 'REST APIs',
-      'SOLID & Design Patterns', 'Visão Computacional', 'CI/CD',
+      'TypeScript', 'JavaScript', 'React', 'Node.js', 'Express', 'Python',
+      'FastAPI', 'PostgreSQL', 'MongoDB', 'RabbitMQ', 'Docker',
+      'REST APIs', 'Flutter', 'CI/CD',
     ],
     stats: [
       { label: 'anos de indústria', value: '3+' },
-      { label: 'anos programando', value: '6+' },
-      { label: 'formações concluídas', value: '2' },
+      { label: 'anos de mentoria técnica', value: '2' },
+      { label: 'organização presidida', value: '1' },
     ],
   },
 
@@ -44,25 +45,25 @@ const pt: SiteContent = {
         title: 'Desenvolvedor Full-Stack',
         organization: 'Intelicity',
         description:
-          'Efetivado após o estágio, participei da reescrita do núcleo de processamento de imagens com IA da empresa, transformando-o em um sistema distribuído baseado em containers, orquestração e mensageria com RabbitMQ. Em seguida, reescrevi a plataforma de classificação de imagens com Flutter, FastAPI e MongoDB — download paralelo para reduzir latência, regras de negócio flexíveis e administração 100% por interface gráfica, eliminando a dependência de programadores na operação. Por fim, desenvolvi sozinho, de ponta a ponta, uma plataforma para prefeituras registrarem, consultarem e auditarem obras em vias urbanas, com usuários, roles, permissões, controle de acesso por página e funcionalidade e jobs agendados disparados por eventos — tudo configurável dinamicamente.',
+          'Atuo na evolução das plataformas web da empresa em três frentes. Na infraestrutura, trabalhei com a equipe de IA na migração do processamento de imagens para uma arquitetura distribuída — serviços containerizados, orquestração e RabbitMQ conectando as etapas do fluxo. No produto, reconstruí a plataforma de anotação de dados com Flutter, FastAPI e MongoDB, priorizando a experiência da equipe de operação: menos espera entre tarefas e administração completa por interface, sem depender de desenvolvedores. E no projeto de maior responsabilidade, entreguei sozinho uma plataforma de gestão de obras urbanas para prefeituras — da modelagem de dados ao deploy, passando por APIs, controle de acesso granular (usuários, roles, permissões por página e por funcionalidade) e automações disparadas por eventos, todas configuráveis pela própria interface.',
         highlights: [
-          'Sistema distribuído: containers, orquestração e RabbitMQ',
-          'Plataforma Flutter + FastAPI + MongoDB gerida por interface',
-          'Plataforma GovTech completa desenvolvida solo (RBAC, jobs, auditoria)',
-          'Deploy, Docker, frontend, backend e banco de dados',
+          'Entrega solo de plataforma completa: modelagem → APIs → deploy',
+          'Controle de acesso granular (RBAC) configurável por interface',
+          'Automações orientadas a eventos, sem alteração de código',
+          'Arquitetura distribuída com RabbitMQ e containers',
         ],
       },
       {
         id: 'pro-intelicity-estagio',
         period: 'mar 2023 — dez 2024',
-        title: 'Estagiário — IA & Cidades Inteligentes',
+        title: 'Estagiário de Desenvolvimento — IA',
         organization: 'Intelicity',
         description:
-          'Ainda no 3º ano da faculdade, trabalhei com pipelines de visão computacional em Python: detecção e classificação de objetos em milhares de imagens, com dados georreferenciados em PostgreSQL. Identifiquei o gargalo do fluxo manual de anotação de dados e desenvolvi o SGC (Sistema Geral de Classificação), aplicação interna em C# com autenticação por usuário, comunicação em tempo real via APIs e quatro modos de classificação configuráveis por usuário — a principal entrega do meu estágio, adotada pela equipe de operação.',
+          'Entrei no 3º ano da faculdade para trabalhar com visão computacional: pipelines em Python detectando e classificando objetos em grandes volumes de imagens, com resultados georreferenciados em PostgreSQL. No dia a dia, percebi que a etapa de anotação de dados — essencial para treinar os modelos — dependia de um processo manual de download e upload de arquivos. Propus e desenvolvi o SGC (Sistema Geral de Classificação): uma aplicação em C# com autenticação por usuário e sincronização em tempo real via APIs, com quatro fluxos de trabalho configuráveis por usuário. A ferramenta foi adotada pela equipe de operação e virou a principal entrega do meu estágio.',
         highlights: [
-          'Visão computacional em Python + PostgreSQL georreferenciado',
-          'SGC: ferramenta interna com APIs em tempo real (C#)',
-          'Melhoria de processo: fim do fluxo manual de anotação',
+          'Visão computacional em Python com PostgreSQL georreferenciado',
+          'Iniciativa: identifiquei o gargalo e propus a solução',
+          'SGC adotado pela operação como ferramenta oficial',
         ],
       },
     ],
@@ -77,45 +78,45 @@ const pt: SiteContent = {
         highlights: ['Formado no final de 2025'],
       },
       {
-        id: 'acad-tcc',
-        period: '2025',
-        title: 'TCC — Arquitetura de software data-driven',
-        organization: 'Instituto Mauá de Tecnologia',
-        description:
-          'Projeto de conclusão focado em arquitetura extensível: uma engine que interpreta regras declaradas em XML externo e monta entidades customizadas em tempo de execução, sem recompilação — máquina de estados serializada, parsing declarativo e um editor visual próprio. Desenvolvido em C# em colaboração interdisciplinar com uma equipe de design, exercitando integração entre times de competências distintas.',
-        highlights: [
-          'Arquitetura declarativa e extensível (XML, zero recompilação)',
-          'Máquina de estados serializada + editor visual próprio',
-          'Colaboração interdisciplinar com equipe de design',
-        ],
-        links: [
-          { label: 'Repositório', url: 'https://github.com/TCC-5-Ano-Engenharia-de-Computacao/TCC' },
-        ],
-      },
-      {
         id: 'acad-monitor',
         period: '2023 — 2024',
-        title: 'Monitor bolsista — Boas práticas de engenharia de software',
+        title: 'Monitor bolsista — Engenharia de Software',
         organization: 'Instituto Mauá de Tecnologia',
         description:
-          'Selecionado como monitor com bolsa de estudos por dois anos consecutivos. Ensinei calouros a estruturar projetos com SOLID, DRY e design patterns (Gang of Four), além de ministrar aulas de computação gráfica e GPGPU. A experiência consolidou minha capacidade de comunicar conceitos técnicos complexos e de elevar o padrão de qualidade de código de uma equipe.',
+          'Selecionado por dois anos consecutivos para receber bolsa e ensinar alunos mais novos. Minha missão era mostrar a diferença entre código que apenas funciona e código de qualidade: princípios SOLID e DRY, design patterns do Gang of Four e revisão de projetos dos alunos. Também preparei e ministrei aulas de computação gráfica e programação em GPU. Foi minha primeira experiência formal de mentoria — e a base do jeito como reviso código e nivelo equipes até hoje.',
         highlights: [
-          'Mentoria técnica de dezenas de alunos',
-          'SOLID, DRY e design patterns (GoF) na prática',
-          'Didática: aulas e workshops técnicos regulares',
+          'Dois anos consecutivos de mentoria técnica remunerada',
+          'Ensino de SOLID, DRY e design patterns (GoF)',
+          'Preparação e condução de aulas e workshops',
         ],
       },
       {
         id: 'acad-nawat',
         period: '2022 — 2025',
-        title: 'Liderança estudantil — Membro → Presidente',
-        organization: 'Organização estudantil de desenvolvimento (Nawat)',
+        title: 'Presidente eleito — Organização estudantil',
+        organization: 'Organização de desenvolvimento de software (Nawat)',
         description:
-          'Entrei como membro no 2º ano e fui eleito presidente no 4º, liderando equipes multidisciplinares de alunos em projetos de software com entregas reais publicadas. Responsável por planejamento, divisão de tarefas, acompanhamento de prazos e desenvolvimento dos membros — uma experiência concreta de gestão de pessoas e projetos antes mesmo de me formar.',
+          'Entrei como membro no 2º ano da faculdade e fui eleito presidente no 4º. Liderei equipes multidisciplinares de alunos — programação, arte e produção — em projetos de software com entregas reais publicadas. Na prática, isso significou planejar ciclos de projeto, distribuir tarefas conforme o nível de cada um, acompanhar prazos e desenvolver pessoas tecnicamente. Deixei o cargo no 5º ano, com sucessão organizada, para focar no TCC e no trabalho. O domínio da organização era desenvolvimento de jogos, mas o aprendizado foi de gestão.',
         highlights: [
-          'Presidente eleito em 2024',
-          'Gestão de equipes multidisciplinares',
-          'Projetos com entregas publicadas',
+          'Gestão de pessoas: planejamento, delegação e acompanhamento',
+          'Equipes multidisciplinares (programação, arte, produção)',
+          'Sucessão planejada ao deixar a presidência',
+        ],
+      },
+      {
+        id: 'acad-tcc',
+        period: '2025',
+        title: 'TCC — Arquitetura de software data-driven',
+        organization: 'Instituto Mauá de Tecnologia',
+        description:
+          'Projeto de conclusão centrado em um problema clássico de engenharia: como permitir que um sistema seja estendido sem alterar seu código-fonte. A resposta foi uma engine em C# que interpreta regras declaradas em XML e monta entidades completas em tempo de execução — máquina de estados serializada, parsing declarativo e um editor visual para autoria das regras. O domínio de demonstração foi um jogo, em parceria com uma equipe de design; os princípios (configuração sobre código, inversão de dependência, extensibilidade) são os mesmos de qualquer sistema corporativo configurável.',
+        highlights: [
+          'Extensibilidade sem recompilação (configuração sobre código)',
+          'Máquina de estados serializada + editor visual',
+          'Parceria interdisciplinar com equipe de design',
+        ],
+        links: [
+          { label: 'Repositório', url: 'https://github.com/TCC-5-Ano-Engenharia-de-Computacao/TCC' },
         ],
       },
       {
@@ -124,7 +125,7 @@ const pt: SiteContent = {
         title: 'Técnico em Mecatrônica',
         organization: 'ETEC Júlio de Mesquita',
         description:
-          'Ensino médio integrado ao técnico — base sólida em eletrônica, automação e lógica de programação. Formado no final de 2020.',
+          'Ensino médio integrado ao técnico — primeira formação em eletrônica, automação e lógica de programação. Concluído no final de 2020.',
         highlights: ['Formado no final de 2020'],
       },
     ],
@@ -134,22 +135,22 @@ const pt: SiteContent = {
     {
       id: 'sb-obras',
       title: 'Plataforma de Gestão de Obras Urbanas',
-      summary: 'Plataforma GovTech completa para prefeituras — desenvolvida integralmente por mim.',
+      summary: 'Sistema completo para prefeituras — entregue de ponta a ponta por uma pessoa.',
       description:
-        'Sistema para prefeituras registrarem, consultarem e auditarem obras em vias urbanas. Inclui gestão de usuários, roles e permissões, controle de acesso por página e por funcionalidade, grupos com acesso restrito a tipos específicos de obra e jobs agendados disparados por eventos (criação, edição ou remoção de obras) para integração com outros sistemas e processamento com IA. Tudo configurável por interface gráfica, sem alterações de código. Responsável por deploy, build, dockerização, frontend, backend, banco de dados e regras de negócio.',
-      tags: ['Full-Stack', 'RBAC', 'Docker', 'Jobs & Eventos', 'GovTech'],
+        'Plataforma que permite a prefeituras registrar, consultar e auditar obras em vias urbanas. O núcleo é um sistema de permissões granular: usuários, roles, regras de acesso por página e por funcionalidade, e grupos restritos a tipos específicos de obra. Eventos do sistema (obra criada, editada, removida) disparam automações agendadas que integram outros sistemas e processamentos com IA — tudo configurado pela interface administrativa, sem tocar em código. Responsabilidade integral: modelagem de dados, APIs, frontend, dockerização e deploy.',
+      tags: ['Full-Stack', 'RBAC', 'Automações', 'Docker', 'GovTech'],
       year: '2025 — 2026',
       media: { type: 'none' },
       mediaRequest:
-        'Envie screenshots da plataforma (telas de obras, permissões e configuração de jobs) — use ambiente de demonstração se os dados forem sensíveis.',
+        'Envie screenshots da plataforma (telas de obras, permissões e configuração de automações) — use ambiente de demonstração se os dados forem sensíveis.',
       hue: 210,
     },
     {
       id: 'sb-pipeline',
-      title: 'Pipeline Distribuído de Processamento com IA',
-      summary: 'Reescrita da infraestrutura central de processamento de imagens da empresa.',
+      title: 'Infraestrutura Distribuída de IA',
+      summary: 'Migração do processamento central de imagens para arquitetura de mensageria.',
       description:
-        'Participação direta na reescrita do fluxo de processamento de imagens com IA como sistema distribuído: serviços containerizados, orquestração e RabbitMQ como camada de mensageria entre as etapas. O resultado foi uma infraestrutura mais robusta, observável e escalável — o coração operacional da empresa.',
+        'Trabalho conjunto com a equipe de IA para migrar o fluxo de processamento de imagens — o núcleo operacional da empresa — para uma arquitetura distribuída: serviços containerizados e orquestrados, com RabbitMQ conectando as etapas. O redesenho trouxe isolamento de falhas, escalabilidade por etapa e visibilidade do fluxo de ponta a ponta.',
       tags: ['Sistemas Distribuídos', 'RabbitMQ', 'Containers', 'IA'],
       year: '2025',
       media: { type: 'none' },
@@ -158,47 +159,47 @@ const pt: SiteContent = {
     },
     {
       id: 'sb-classificacao',
-      title: 'Plataforma de Classificação v2',
-      summary: 'Flutter + FastAPI + MongoDB, administrada 100% por interface gráfica.',
+      title: 'Plataforma de Anotação de Dados',
+      summary: 'Flutter + FastAPI + MongoDB — administrada inteiramente pela interface.',
       description:
-        'Reescrita da ferramenta de anotação de dados para IA com tecnologias adequadas ao problema: cliente Flutter com download paralelo de imagens para reduzir a latência entre classificações, backend FastAPI e MongoDB. Um modo único e flexível substituiu os quatro modos da versão anterior, e a configuração de tarefas e usuários passou a ser feita por interface gráfica — permitindo que pessoas sem conhecimento técnico administrem a plataforma.',
-      tags: ['Flutter', 'FastAPI', 'MongoDB', 'UX de ferramenta interna'],
+        'Segunda geração da ferramenta de anotação de dados para IA. Cliente Flutter com download paralelo de imagens (menos espera entre tarefas), backend FastAPI e MongoDB. Um único fluxo flexível substituiu os quatro modos da versão anterior, e a configuração de tarefas e usuários migrou de arquivos estáticos para uma interface administrativa — qualquer pessoa da operação gerencia a plataforma sem apoio técnico.',
+      tags: ['Flutter', 'FastAPI', 'MongoDB', 'Ferramentas internas'],
       year: '2025',
       media: { type: 'none' },
-      mediaRequest: 'Envie screenshots do app (tela de classificação e configuração de tarefas).',
+      mediaRequest: 'Envie screenshots do app (tela de anotação e configuração de tarefas).',
       hue: 190,
     },
     {
       id: 'sb-sgc',
       title: 'SGC — Sistema Geral de Classificação',
-      summary: 'Ferramenta interna que substituiu um fluxo manual de anotação de dados.',
+      summary: 'A ferramenta que propus no estágio e a operação adotou como oficial.',
       description:
-        'Primeira versão da ferramenta de anotação, desenvolvida em C# durante o estágio: autenticação por usuário, imagens servidas por API e classificações sincronizadas em tempo real com o servidor, com quatro modos de classificação configuráveis por usuário via JSON. Eliminou um processo manual de download e upload de arquivos ZIP e virou a base do fluxo de anotação da equipe.',
-      tags: ['C#', 'APIs', 'Ferramenta interna', 'IA'],
+        'Primeira geração da ferramenta de anotação, nascida de uma iniciativa minha ao identificar o gargalo do processo manual (baixar ZIPs de imagens, classificar offline, subir de volta). Aplicação em C# com autenticação por usuário, imagens servidas por API e classificações sincronizadas em tempo real, com quatro fluxos configuráveis por usuário. Reduziu o retrabalho da operação e virou peça central do treinamento dos modelos.',
+      tags: ['C#', 'APIs', 'Iniciativa própria', 'IA'],
       year: '2023 — 2024',
       media: { type: 'none' },
-      mediaRequest: 'Envie um screenshot de qualquer um dos 4 modos de classificação do SGC.',
+      mediaRequest: 'Envie um screenshot de qualquer um dos 4 fluxos de classificação do SGC.',
       hue: 260,
     },
     {
       id: 'sb-tcc',
       title: 'Engine Data-Driven (TCC)',
-      summary: 'Arquitetura declarativa: entidades definidas em XML, sem recompilação.',
+      summary: 'Sistema extensível por configuração: entidades definidas em XML, sem recompilar.',
       description:
-        'Trabalho de conclusão de curso com foco em arquitetura de software extensível: uma engine em C# que interpreta regras de um arquivo XML externo e monta entidades customizadas em tempo de execução — máquina de estados serializada, parsing declarativo e editor visual próprio. O domínio de aplicação foi um jogo, mas os princípios (inversão de dependência, configuração sobre código, extensibilidade sem recompilação) são os mesmos de sistemas corporativos configuráveis.',
-      tags: ['C#', 'Arquitetura', 'XML', 'Máquina de Estados'],
+        'Projeto acadêmico de arquitetura de software: uma engine em C# que interpreta regras declaradas em XML externo e monta entidades completas em tempo de execução, com máquina de estados serializada e editor visual próprio. Demonstrado em um jogo, construído em parceria com uma equipe de design — mas o problema resolvido é o de qualquer plataforma corporativa que precise ser estendida por configuração, não por código.',
+      tags: ['C#', 'Arquitetura', 'XML', 'Extensibilidade'],
       year: '2025',
       media: { type: 'none' },
-      mediaRequest: 'Envie screenshots do State Machine Editor (as do CMD04.pdf servem de base).',
+      mediaRequest: 'Envie screenshots do editor visual de máquina de estados.',
       repoUrl: 'https://github.com/TCC-5-Ano-Engenharia-de-Computacao/TCC',
       hue: 280,
     },
     {
       id: 'sb-portfolio',
       title: 'Este Site',
-      summary: 'Full-stack bilíngue com múltiplas variantes de apresentação por rota.',
+      summary: 'Full-stack bilíngue com variantes de apresentação por rota.',
       description:
-        'React + Node + TypeScript em Docker Compose, com conteúdo em dois idiomas servido por API e um sistema de variantes por rota — esta versão formal e uma versão criativa em /gamer-resume. Deploy contínuo na Vercel (frontend) e Render (backend), com domínio próprio.',
+        'React + Node + TypeScript em Docker Compose, com conteúdo em dois idiomas servido por API e variantes de apresentação por rota — esta versão e uma versão criativa em /gamer-resume. Deploy contínuo (Vercel + Render) com domínio próprio.',
       tags: ['React', 'Node', 'TypeScript', 'Docker', 'CI/CD'],
       year: '2026',
       media: { type: 'none' },
@@ -211,12 +212,12 @@ const pt: SiteContent = {
 const en: SiteContent = {
   profile: {
     name: 'Felipe Rodrigues Peixoto da Silva',
-    role: 'Software Engineer · Full-Stack & AI',
+    role: 'Full-Stack Developer',
     tagline:
-      'Robust platforms end to end: clean architecture, distributed systems and software other people can maintain and extend.',
+      'From database to interface: complete web platforms, with applied AI and code guided by principles — not improvisation.',
     bio: [
-      'Computer Engineer from Instituto Mauá de Tecnologia (2025), with 3+ years of industry experience building distributed web platforms and artificial intelligence pipelines. I work across the whole development cycle: requirements, architecture, implementation, dockerization and deployment.',
-      'My work is guided by engineering principles — SOLID, DRY and design patterns — with a focus on systems configurable through the UI, reducing operational dependency on programmers. I also have hands-on leadership and people-development experience: I presided over a student organization and spent two years as a scholarship teaching assistant, teaching software architecture and best practices to dozens of students.',
+      'I am a full-stack developer with 3+ years in industry building complete web platforms: APIs in Node and Python, relational and non-relational databases, message queues, containers and interfaces in React and Flutter. A Computer Engineering graduate from Instituto Mauá de Tecnologia (2025), I work at Intelicity applying AI to urban services — from the processing infrastructure to the final product.',
+      'What sets me apart goes beyond code. I spent two years as a scholarship teaching assistant, teaching SOLID, DRY and design patterns to younger students, and presided over a student organization leading multidisciplinary teams — experiences that taught me to review code with empathy, level teams up technically and turn vague requirements into concrete deliveries. I believe quality software comes from well-trained people and clear processes.',
     ],
     location: 'São Paulo, Brazil',
     email: 'frps2003@gmail.com',
@@ -225,14 +226,14 @@ const en: SiteContent = {
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/felipe-rodrigues-peixoto-da-silva-501919209/' },
     ],
     skills: [
-      'TypeScript', 'React', 'Node.js', 'Python', 'FastAPI', 'Docker',
-      'RabbitMQ', 'PostgreSQL', 'MongoDB', 'Flutter', 'REST APIs',
-      'SOLID & Design Patterns', 'Computer Vision', 'CI/CD',
+      'TypeScript', 'JavaScript', 'React', 'Node.js', 'Express', 'Python',
+      'FastAPI', 'PostgreSQL', 'MongoDB', 'RabbitMQ', 'Docker',
+      'REST APIs', 'Flutter', 'CI/CD',
     ],
     stats: [
       { label: 'years in industry', value: '3+' },
-      { label: 'years coding', value: '6+' },
-      { label: 'degrees completed', value: '2' },
+      { label: 'years of technical mentoring', value: '2' },
+      { label: 'organization presided', value: '1' },
     ],
   },
 
@@ -244,25 +245,25 @@ const en: SiteContent = {
         title: 'Full-Stack Developer',
         organization: 'Intelicity',
         description:
-          "Hired full-time after the internship, I took part in rewriting the company's core AI image-processing pipeline into a distributed system based on containers, orchestration and RabbitMQ messaging. I then rebuilt the image classification platform with Flutter, FastAPI and MongoDB — parallel downloads to cut latency, flexible business rules and 100% GUI-based administration, removing programmers from day-to-day operations. Finally, I single-handedly built, end to end, a platform for city governments to register, browse and audit urban roadwork, with users, roles, permissions, per-page and per-feature access control and event-triggered scheduled jobs — all dynamically configurable.",
+          "I work on the evolution of the company's web platforms across three fronts. On infrastructure, I worked with the AI team to migrate image processing to a distributed architecture — containerized services, orchestration and RabbitMQ connecting the pipeline stages. On product, I rebuilt the data-annotation platform with Flutter, FastAPI and MongoDB, prioritizing the operations team's experience: less waiting between tasks and full administration through the interface, with no developer dependency. And on my highest-responsibility project, I single-handedly delivered an urban roadwork management platform for city governments — from data modeling to deployment, including APIs, granular access control (users, roles, per-page and per-feature permissions) and event-triggered automations, all configurable through the interface itself.",
         highlights: [
-          'Distributed system: containers, orchestration and RabbitMQ',
-          'Flutter + FastAPI + MongoDB platform managed via GUI',
-          'Complete GovTech platform built solo (RBAC, jobs, auditing)',
-          'Deploy, Docker, frontend, backend and database',
+          'Solo delivery of a complete platform: modeling → APIs → deploy',
+          'Granular access control (RBAC) configurable via UI',
+          'Event-driven automations, zero code changes required',
+          'Distributed architecture with RabbitMQ and containers',
         ],
       },
       {
         id: 'pro-intelicity-estagio',
         period: 'Mar 2023 — Dec 2024',
-        title: 'Intern — AI & Smart Cities',
+        title: 'Development Intern — AI',
         organization: 'Intelicity',
         description:
-          'While still in my 3rd year of college, I worked on computer vision pipelines in Python: object detection and classification across thousands of images, with georeferenced data in PostgreSQL. I identified the bottleneck in the manual data-annotation workflow and built SGC (General Classification System), an internal C# application with per-user authentication, real-time API communication and four classification modes configurable per user — the main deliverable of my internship, adopted by the operations team.',
+          'I joined in my 3rd year of college to work with computer vision: Python pipelines detecting and classifying objects across large volumes of images, with georeferenced results in PostgreSQL. Day to day, I noticed that data annotation — essential for training the models — depended on a manual file download/upload process. I proposed and built SGC (General Classification System): a C# application with per-user authentication and real-time synchronization via APIs, offering four user-configurable workflows. The tool was adopted by the operations team and became the main deliverable of my internship.',
         highlights: [
-          'Computer vision in Python + georeferenced PostgreSQL',
-          'SGC: internal tool with real-time APIs (C#)',
-          'Process improvement: replaced a manual annotation workflow',
+          'Computer vision in Python with georeferenced PostgreSQL',
+          'Initiative: identified the bottleneck and proposed the solution',
+          'SGC adopted by operations as the official tool',
         ],
       },
     ],
@@ -277,45 +278,45 @@ const en: SiteContent = {
         highlights: ['Graduated at the end of 2025'],
       },
       {
-        id: 'acad-tcc',
-        period: '2025',
-        title: 'Thesis — Data-driven software architecture',
-        organization: 'Instituto Mauá de Tecnologia',
-        description:
-          'Capstone project focused on extensible architecture: an engine that interprets rules declared in an external XML file and assembles custom entities at runtime, with zero recompilation — serialized state machine, declarative parsing and a custom visual editor. Built in C# in interdisciplinary collaboration with a design team, exercising integration between teams with distinct skill sets.',
-        highlights: [
-          'Declarative, extensible architecture (XML, zero recompilation)',
-          'Serialized state machine + custom visual editor',
-          'Interdisciplinary collaboration with a design team',
-        ],
-        links: [
-          { label: 'Repository', url: 'https://github.com/TCC-5-Ano-Engenharia-de-Computacao/TCC' },
-        ],
-      },
-      {
         id: 'acad-monitor',
         period: '2023 — 2024',
-        title: 'Scholarship TA — Software engineering best practices',
+        title: 'Scholarship TA — Software Engineering',
         organization: 'Instituto Mauá de Tecnologia',
         description:
-          'Selected as a scholarship teaching assistant for two consecutive years. I taught freshmen how to structure projects with SOLID, DRY and design patterns (Gang of Four), and lectured on computer graphics and GPGPU. The experience consolidated my ability to communicate complex technical concepts and raise a team’s code quality bar.',
+          'Selected two years in a row for a paid teaching-assistant position. My mission was showing students the difference between code that merely works and quality code: SOLID and DRY principles, Gang of Four design patterns, and reviewing student projects. I also prepared and delivered lectures on computer graphics and GPU programming. It was my first formal mentoring experience — and the foundation of how I review code and level teams up to this day.',
         highlights: [
-          'Technical mentoring of dozens of students',
-          'SOLID, DRY and design patterns (GoF) in practice',
-          'Regular technical lectures and workshops',
+          'Two consecutive years of paid technical mentoring',
+          'Taught SOLID, DRY and design patterns (GoF)',
+          'Prepared and delivered lectures and workshops',
         ],
       },
       {
         id: 'acad-nawat',
         period: '2022 — 2025',
-        title: 'Student leadership — Member → President',
-        organization: 'Student development organization (Nawat)',
+        title: 'Elected President — Student organization',
+        organization: 'Software development student organization (Nawat)',
         description:
-          'Joined as a member in my 2nd year and was elected president in my 4th, leading multidisciplinary student teams through software projects with real, published deliverables. Responsible for planning, task allocation, deadline tracking and member development — concrete people and project management experience before graduating.',
+          'I joined as a member in my 2nd year and was elected president in my 4th. I led multidisciplinary student teams — programming, art and production — through software projects with real, published deliveries. In practice, that meant planning project cycles, assigning tasks according to each member’s level, tracking deadlines and developing people technically. I stepped down in my 5th year, with an organized succession, to focus on my thesis and my job. The organization’s domain was game development, but the lessons were in management.',
         highlights: [
-          'Elected president in 2024',
-          'Managed multidisciplinary teams',
-          'Projects with published deliverables',
+          'People management: planning, delegation and follow-up',
+          'Multidisciplinary teams (programming, art, production)',
+          'Planned succession when leaving the presidency',
+        ],
+      },
+      {
+        id: 'acad-tcc',
+        period: '2025',
+        title: 'Thesis — Data-driven software architecture',
+        organization: 'Instituto Mauá de Tecnologia',
+        description:
+          'Capstone project centered on a classic engineering problem: how to let a system be extended without changing its source code. The answer was a C# engine that interprets rules declared in XML and assembles complete entities at runtime — serialized state machine, declarative parsing and a visual editor for authoring rules. The demonstration domain was a game, in partnership with a design team; the principles (configuration over code, dependency inversion, extensibility) are the same behind any configurable enterprise system.',
+        highlights: [
+          'Extensibility without recompilation (configuration over code)',
+          'Serialized state machine + visual editor',
+          'Interdisciplinary partnership with a design team',
+        ],
+        links: [
+          { label: 'Repository', url: 'https://github.com/TCC-5-Ano-Engenharia-de-Computacao/TCC' },
         ],
       },
       {
@@ -324,7 +325,7 @@ const en: SiteContent = {
         title: 'Mechatronics Technician',
         organization: 'ETEC Júlio de Mesquita',
         description:
-          'High school integrated with a technical program — a solid foundation in electronics, automation and programming logic. Graduated at the end of 2020.',
+          'High school integrated with a technical program — first training in electronics, automation and programming logic. Completed at the end of 2020.',
         highlights: ['Graduated at the end of 2020'],
       },
     ],
@@ -334,22 +335,22 @@ const en: SiteContent = {
     {
       id: 'sb-obras',
       title: 'Urban Roadwork Management Platform',
-      summary: 'Complete GovTech platform for city governments — built entirely by me.',
+      summary: 'A complete system for city governments — delivered end to end by one person.',
       description:
-        'A system for city governments to register, browse and audit roadwork on urban streets. Includes user, role and permission management, per-page and per-feature access control, groups scoped to specific work types, and scheduled jobs triggered by events (work created, edited or removed) for integration with other systems and AI processing. Everything configurable through the GUI, with zero code changes. Responsible for deploy, build, dockerization, frontend, backend, database and business rules.',
-      tags: ['Full-Stack', 'RBAC', 'Docker', 'Jobs & Events', 'GovTech'],
+        'A platform that lets city governments register, browse and audit roadwork on urban streets. Its core is a granular permission system: users, roles, per-page and per-feature access rules, and groups restricted to specific work types. System events (work created, edited, removed) trigger scheduled automations that integrate other systems and AI processing — all configured through the admin interface, without touching code. Full responsibility: data modeling, APIs, frontend, dockerization and deployment.',
+      tags: ['Full-Stack', 'RBAC', 'Automations', 'Docker', 'GovTech'],
       year: '2025 — 2026',
       media: { type: 'none' },
       mediaRequest:
-        'Send platform screenshots (works, permissions and job configuration screens) — use a demo environment if real data is sensitive.',
+        'Send platform screenshots (works, permissions and automation configuration screens) — use a demo environment if real data is sensitive.',
       hue: 210,
     },
     {
       id: 'sb-pipeline',
-      title: 'Distributed AI Processing Pipeline',
-      summary: "Rewrite of the company's core image-processing infrastructure.",
+      title: 'Distributed AI Infrastructure',
+      summary: 'Migration of core image processing to a messaging architecture.',
       description:
-        "Direct participation in rewriting the AI image-processing flow as a distributed system: containerized services, orchestration and RabbitMQ as the messaging layer between stages. The result was a more robust, observable and scalable infrastructure — the company's operational core.",
+        "Joint work with the AI team to migrate the image-processing flow — the company's operational core — to a distributed architecture: containerized, orchestrated services with RabbitMQ connecting the stages. The redesign brought failure isolation, per-stage scalability and end-to-end visibility of the flow.",
       tags: ['Distributed Systems', 'RabbitMQ', 'Containers', 'AI'],
       year: '2025',
       media: { type: 'none' },
@@ -358,47 +359,47 @@ const en: SiteContent = {
     },
     {
       id: 'sb-classificacao',
-      title: 'Classification Platform v2',
-      summary: 'Flutter + FastAPI + MongoDB, administered 100% through the GUI.',
+      title: 'Data Annotation Platform',
+      summary: 'Flutter + FastAPI + MongoDB — administered entirely through the interface.',
       description:
-        'A rewrite of the AI data-annotation tool with technologies suited to the problem: a Flutter client with parallel image downloads to cut latency between classifications, a FastAPI backend and MongoDB. A single flexible mode replaced the previous four, and task/user configuration moved to a GUI — allowing non-technical people to administer the platform.',
-      tags: ['Flutter', 'FastAPI', 'MongoDB', 'Internal tooling UX'],
+        'Second generation of the AI data-annotation tool. Flutter client with parallel image downloads (less waiting between tasks), FastAPI backend and MongoDB. A single flexible workflow replaced the previous four modes, and task/user configuration moved from static files to an admin interface — anyone in operations manages the platform without technical support.',
+      tags: ['Flutter', 'FastAPI', 'MongoDB', 'Internal tooling'],
       year: '2025',
       media: { type: 'none' },
-      mediaRequest: 'Send app screenshots (classification screen and task configuration).',
+      mediaRequest: 'Send app screenshots (annotation screen and task configuration).',
       hue: 190,
     },
     {
       id: 'sb-sgc',
       title: 'SGC — General Classification System',
-      summary: 'Internal tool that replaced a manual data-annotation workflow.',
+      summary: 'The tool I proposed as an intern that operations adopted as official.',
       description:
-        'First version of the annotation tool, built in C# during my internship: per-user authentication, images served via API and classifications synced to the server in real time, with four classification modes configurable per user via JSON. It eliminated a manual ZIP download/upload process and became the foundation of the team’s annotation workflow.',
-      tags: ['C#', 'APIs', 'Internal tool', 'AI'],
+        'First generation of the annotation tool, born from my own initiative after identifying the bottleneck in the manual process (downloading ZIPs of images, classifying offline, uploading back). A C# application with per-user authentication, images served via API and classifications synced in real time, with four user-configurable workflows. It cut operational rework and became a central piece of model training.',
+      tags: ['C#', 'APIs', 'Own initiative', 'AI'],
       year: '2023 — 2024',
       media: { type: 'none' },
-      mediaRequest: 'Send a screenshot of any of the 4 SGC classification modes.',
+      mediaRequest: 'Send a screenshot of any of the 4 SGC classification workflows.',
       hue: 260,
     },
     {
       id: 'sb-tcc',
       title: 'Data-Driven Engine (Thesis)',
-      summary: 'Declarative architecture: entities defined in XML, zero recompilation.',
+      summary: 'A system extensible by configuration: entities defined in XML, no recompiling.',
       description:
-        'Capstone project focused on extensible software architecture: a C# engine that interprets rules from an external XML file and assembles custom entities at runtime — serialized state machine, declarative parsing and a custom visual editor. The application domain was a game, but the principles (dependency inversion, configuration over code, extensibility without recompilation) are the same ones behind configurable enterprise systems.',
-      tags: ['C#', 'Architecture', 'XML', 'State Machine'],
+        'Academic software-architecture project: a C# engine that interprets rules declared in an external XML file and assembles complete entities at runtime, with a serialized state machine and a custom visual editor. Demonstrated on a game, built in partnership with a design team — but the problem it solves belongs to any enterprise platform that must be extended through configuration rather than code.',
+      tags: ['C#', 'Architecture', 'XML', 'Extensibility'],
       year: '2025',
       media: { type: 'none' },
-      mediaRequest: 'Send State Machine Editor screenshots (the CMD04.pdf ones work as a base).',
+      mediaRequest: 'Send screenshots of the visual state machine editor.',
       repoUrl: 'https://github.com/TCC-5-Ano-Engenharia-de-Computacao/TCC',
       hue: 280,
     },
     {
       id: 'sb-portfolio',
       title: 'This Website',
-      summary: 'Bilingual full-stack site with multiple presentation variants per route.',
+      summary: 'Bilingual full-stack site with route-based presentation variants.',
       description:
-        'React + Node + TypeScript on Docker Compose, with bilingual content served via API and a route-based variant system — this formal version and a creative one at /gamer-resume. Continuous deployment on Vercel (frontend) and Render (backend), with a custom domain.',
+        'React + Node + TypeScript on Docker Compose, with bilingual API-served content and route-based presentation variants — this version and a creative one at /gamer-resume. Continuous deployment (Vercel + Render) with a custom domain.',
       tags: ['React', 'Node', 'TypeScript', 'Docker', 'CI/CD'],
       year: '2026',
       media: { type: 'none' },

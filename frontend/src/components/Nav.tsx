@@ -8,6 +8,15 @@ export function Nav() {
   const variant = useVariant();
   const t = UI[variant][lang];
 
+  // tema claro/escuro — só usado na skin formal
+  const [dark, setDark] = useState(() => localStorage.getItem('formal-theme') === 'dark');
+
+  useEffect(() => {
+    if (variant !== 'formal') return;
+    document.body.classList.toggle('dark', dark);
+    localStorage.setItem('formal-theme', dark ? 'dark' : 'light');
+  }, [dark, variant]);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -42,6 +51,16 @@ export function Nav() {
           <a className="btn btn-pink" href={api.resumeUrl(lang, variant)} download>
             ↓ {t.resume}
           </a>
+          {variant === 'formal' && (
+            <button
+              className="theme-toggle"
+              onClick={() => setDark((d) => !d)}
+              aria-label={t.themeTitle}
+              title={t.themeTitle}
+            >
+              {dark ? '☀️' : '🌙'}
+            </button>
+          )}
           <button
             className="lang-toggle"
             onClick={toggle}

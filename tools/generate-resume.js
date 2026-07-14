@@ -189,32 +189,43 @@ const formalPt = {
   ...gamerPt,
   accent: '#16385e',
   accent2: '#33608d',
-  title: 'Engenheiro de Software · Full-Stack & IA',
+  title: 'Desenvolvedor Full-Stack · IA Aplicada',
   summary:
-    'Engenheiro da Computação (Instituto Mauá de Tecnologia, 2025) com mais de 3 anos de experiência na indústria construindo plataformas web distribuídas e pipelines de IA de ponta a ponta — requisitos, arquitetura, desenvolvimento, dockerização e deploy. Trabalho orientado por SOLID, DRY e design patterns, com foco em sistemas configuráveis por interface que reduzem a dependência operacional de programadores. Experiência prática de liderança e gestão de pessoas: presidente de organização estudantil e monitor bolsista por dois anos, ensinando boas práticas de engenharia a dezenas de alunos.',
+    'Desenvolvedor full-stack com mais de 3 anos de indústria construindo plataformas web completas: APIs em Node e Python, bancos relacionais e não relacionais, filas de mensageria, containers e interfaces em React e Flutter. Engenheiro da Computação (Instituto Mauá de Tecnologia, 2025). Código guiado por SOLID, DRY e design patterns, com foco em sistemas administráveis por interface, que reduzem a dependência operacional de desenvolvedores. Além do código: dois anos ensinando boas práticas como monitor bolsista e um mandato como presidente de organização estudantil, liderando equipes multidisciplinares.',
   experience: [
-    gamerPt.experience[0],
     {
-      ...gamerPt.experience[1],
+      role: 'Desenvolvedor Full-Stack',
+      org: 'Intelicity',
+      period: 'dez 2024 — atual',
       bullets: [
-        'Pipelines de visão computacional em Python: detecção e classificação de objetos em milhares de imagens, com dados georreferenciados em PostgreSQL.',
-        'Criei o SGC (Sistema Geral de Classificação), ferramenta interna de anotação de dados em C# com autenticação por usuário, comunicação em tempo real via APIs e 4 modos de classificação configuráveis — substituindo um fluxo manual de ZIPs e melhorando o processo da equipe de operação.',
+        'Entreguei sozinho, de ponta a ponta (modelagem de dados, APIs, frontend, dockerização e deploy), uma plataforma de gestão de obras urbanas para prefeituras: controle de acesso granular (usuários, roles, permissões por página e por funcionalidade) e automações disparadas por eventos — tudo configurável pela interface administrativa, sem alteração de código.',
+        'Reconstruí a plataforma de anotação de dados com Flutter, FastAPI e MongoDB: download paralelo de imagens, fluxo único flexível e administração 100% por interface, eliminando a dependência de desenvolvedores na operação.',
+        'Participei, com a equipe de IA, da migração do processamento de imagens para arquitetura distribuída: serviços containerizados, orquestração e mensageria com RabbitMQ.',
+      ],
+    },
+    {
+      role: 'Estagiário de Desenvolvimento — IA',
+      org: 'Intelicity',
+      period: 'mar 2023 — dez 2024',
+      bullets: [
+        'Pipelines de visão computacional em Python: detecção e classificação de objetos em grandes volumes de imagens, com dados georreferenciados em PostgreSQL.',
+        'Identifiquei o gargalo do fluxo manual de anotação de dados e propus o SGC (Sistema Geral de Classificação): aplicação em C# com autenticação por usuário e sincronização em tempo real via APIs — adotada pela equipe de operação como ferramenta oficial.',
       ],
     },
   ],
   projects: [
     {
       name: 'Arquitetura de software data-driven (TCC)',
-      desc: 'Engine em C# que interpreta regras declaradas em XML externo e monta entidades em tempo de execução, sem recompilação: máquina de estados serializada, parsing declarativo e editor visual próprio — os mesmos princípios de sistemas corporativos configuráveis.',
+      desc: 'Engine em C# que interpreta regras declaradas em XML externo e monta entidades em tempo de execução, sem recompilação: máquina de estados serializada, parsing declarativo e editor visual próprio — os mesmos princípios de sistemas corporativos extensíveis por configuração.',
     },
     {
       name: 'Site pessoal full-stack',
-      desc: 'React + Node + TypeScript em Docker Compose, conteúdo bilíngue servido por API, múltiplas variantes de apresentação por rota e deploy contínuo (Vercel + Render) com domínio próprio.',
+      desc: 'React + Node + TypeScript em Docker Compose, conteúdo bilíngue servido por API, variantes de apresentação por rota (formal/criativa, com tema claro/escuro) e deploy contínuo (Vercel + Render) com domínio próprio.',
     },
   ],
   academic: [
-    'Liderança estudantil: membro (2022) e presidente eleito (2024) de organização de desenvolvimento de software, liderando equipes multidisciplinares de alunos em projetos com entregas publicadas — planejamento, divisão de tarefas e desenvolvimento de pessoas.',
-    'Monitor bolsista por dois anos (2023–2024): ensinei SOLID, DRY e design patterns (Gang of Four) a calouros, com aulas de computação gráfica e GPGPU — comunicação técnica e elevação do padrão de qualidade de código.',
+    'Presidente eleito de organização estudantil de desenvolvimento de software (2024; membro desde 2022): liderança de equipes multidisciplinares — programação, arte e produção — com planejamento de ciclos, delegação por nível, acompanhamento de prazos e sucessão organizada ao deixar o cargo.',
+    'Monitor bolsista por dois anos consecutivos (2023–2024): ensinei SOLID, DRY e design patterns (Gang of Four) a alunos mais novos, com revisão de projetos e aulas de computação gráfica e programação em GPU — a base da minha prática de mentoria e code review.',
   ],
   hard: [
     ['Linguagens', 'TypeScript/JavaScript, Python, C#, Dart, SQL'],
@@ -242,32 +253,43 @@ const formalEn = {
   ...gamerEn,
   accent: '#16385e',
   accent2: '#33608d',
-  title: 'Software Engineer · Full-Stack & AI',
+  title: 'Full-Stack Developer · Applied AI',
   summary:
-    'Computer Engineer (Instituto Mauá de Tecnologia, 2025) with 3+ years of industry experience building distributed web platforms and AI pipelines end to end — requirements, architecture, implementation, dockerization and deployment. My work is guided by SOLID, DRY and design patterns, focusing on UI-configurable systems that reduce operational dependency on programmers. Hands-on leadership and people-management experience: student organization president and scholarship teaching assistant for two years, teaching engineering best practices to dozens of students.',
+    'Full-stack developer with 3+ years in industry building complete web platforms: APIs in Node and Python, relational and non-relational databases, message queues, containers and interfaces in React and Flutter. Computer Engineer (Instituto Mauá de Tecnologia, 2025). Code guided by SOLID, DRY and design patterns, focused on UI-administrable systems that reduce operational dependency on developers. Beyond code: two years teaching best practices as a scholarship TA and a term as student organization president, leading multidisciplinary teams.',
   experience: [
-    gamerEn.experience[0],
     {
-      ...gamerEn.experience[1],
+      role: 'Full-Stack Developer',
+      org: 'Intelicity',
+      period: 'Dec 2024 — present',
       bullets: [
-        'Computer vision pipelines in Python: object detection and classification across thousands of images, with georeferenced data in PostgreSQL.',
-        'Created SGC (General Classification System), an internal C# data-annotation tool with per-user authentication, real-time API communication and 4 configurable classification modes — replacing a manual ZIP-based workflow and improving the operations team’s process.',
+        'Single-handedly delivered, end to end (data modeling, APIs, frontend, dockerization and deployment), an urban roadwork management platform for city governments: granular access control (users, roles, per-page and per-feature permissions) and event-triggered automations — all configurable through the admin interface, with zero code changes.',
+        'Rebuilt the data-annotation platform with Flutter, FastAPI and MongoDB: parallel image downloads, a single flexible workflow and 100% UI-based administration, removing developer dependency from operations.',
+        'Worked with the AI team on migrating image processing to a distributed architecture: containerized services, orchestration and RabbitMQ messaging.',
+      ],
+    },
+    {
+      role: 'Development Intern — AI',
+      org: 'Intelicity',
+      period: 'Mar 2023 — Dec 2024',
+      bullets: [
+        'Computer vision pipelines in Python: object detection and classification across large volumes of images, with georeferenced data in PostgreSQL.',
+        'Identified the bottleneck in the manual data-annotation workflow and proposed SGC (General Classification System): a C# application with per-user authentication and real-time API synchronization — adopted by the operations team as the official tool.',
       ],
     },
   ],
   projects: [
     {
       name: 'Data-driven software architecture (Thesis)',
-      desc: 'A C# engine that interprets rules declared in an external XML file and assembles entities at runtime, with zero recompilation: serialized state machine, declarative parsing and a custom visual editor — the same principles behind configurable enterprise systems.',
+      desc: 'A C# engine that interprets rules declared in an external XML file and assembles entities at runtime, with zero recompilation: serialized state machine, declarative parsing and a custom visual editor — the same principles behind enterprise systems extensible through configuration.',
     },
     {
       name: 'Personal full-stack website',
-      desc: 'React + Node + TypeScript on Docker Compose, bilingual API-served content, multiple route-based presentation variants and continuous deployment (Vercel + Render) with a custom domain.',
+      desc: 'React + Node + TypeScript on Docker Compose, bilingual API-served content, route-based presentation variants (formal/creative, with light/dark theme) and continuous deployment (Vercel + Render) with a custom domain.',
     },
   ],
   academic: [
-    'Student leadership: member (2022) and elected president (2024) of a software development student organization, leading multidisciplinary teams through projects with published deliverables — planning, task allocation and people development.',
-    'Scholarship teaching assistant for two years (2023–2024): taught SOLID, DRY and design patterns (Gang of Four) to freshmen, plus computer graphics and GPGPU lectures — technical communication and raising the code-quality bar.',
+    'Elected president of a software development student organization (2024; member since 2022): led multidisciplinary teams — programming, art and production — with cycle planning, level-based delegation, deadline tracking and an organized succession when stepping down.',
+    'Scholarship teaching assistant for two consecutive years (2023–2024): taught SOLID, DRY and design patterns (Gang of Four) to younger students, reviewing their projects and lecturing on computer graphics and GPU programming — the foundation of my mentoring and code review practice.',
   ],
   hard: [
     ['Languages', 'TypeScript/JavaScript, Python, C#, Dart, SQL'],
