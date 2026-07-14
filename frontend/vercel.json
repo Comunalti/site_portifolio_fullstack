@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://SEU-BACKEND.onrender.com/api/:path*"
+      "destination": "https://site-portifolio-fullstack.onrender.com/api/:path*"
     }
   ]
 }
