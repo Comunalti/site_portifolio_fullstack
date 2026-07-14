@@ -61,8 +61,8 @@ body {
   image-rendering: pixelated;
 }
 
-/* Scanlines CRT por cima de tudo (bem sutis) */
-body::after {
+/* Scanlines CRT por cima de tudo (bem sutis) — só na skin gamer */
+body.gamer::after {
   content: '';
   position: fixed;
   inset: 0;
@@ -254,6 +254,10 @@ img {
 .nav-links a:not(.btn):hover {
   color: var(--pink);
   text-shadow: 0 0 10px var(--pink-dim);
+}
+
+.nav-variant-switch {
+  opacity: 0.75;
 }
 
 .lang-toggle {
@@ -1177,4 +1181,510 @@ img {
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
+}
+
+/* ============================================================
+   SKIN FORMAL — /formal-resume
+   Corporativa: navy + branco, serif nos títulos, sem shader,
+   sem scanlines, sem glitch. Remapeia as variáveis da skin
+   gamer e ajusta os detalhes que a troca de variável não cobre.
+   ============================================================ */
+
+body.formal {
+  --bg: #f4f6f9;
+  --panel: #ffffff;
+  --panel-solid: #ffffff;
+  --cyan: #33608d;
+  --cyan-dim: rgba(51, 96, 141, 0.4);
+  --cyan-faint: rgba(51, 96, 141, 0.08);
+  --pink: #16385e;
+  --pink-dim: rgba(22, 56, 94, 0.35);
+  --pink-faint: rgba(22, 56, 94, 0.08);
+  --text: #212a3a;
+  --muted: #5b6880;
+  --line: rgba(33, 42, 66, 0.14);
+
+  --font-pixel: 'Source Serif 4', Georgia, serif;
+  --font-term: 'Libre Franklin', Arial, sans-serif;
+  --font-body: 'Libre Franklin', Arial, sans-serif;
+
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(22, 56, 94, 0.06), transparent 70%),
+    var(--bg);
+  font-weight: 400;
+}
+
+body.formal ::selection {
+  background: #16385e;
+  color: #fff;
+}
+
+/* tipografia: serif só em títulos, sem caixa alta forçada nem glow */
+body.formal .pixel,
+body.formal .section-title,
+body.formal .hero-title,
+body.formal .footer-title,
+body.formal .modal-title,
+body.formal .hero-stat-value {
+  font-family: var(--font-pixel);
+  text-transform: none;
+  text-shadow: none;
+  line-height: 1.15;
+}
+
+body.formal .term {
+  font-family: var(--font-term);
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  font-weight: 600;
+}
+
+/* painéis: cartões brancos com sombra suave */
+body.formal .panel {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  backdrop-filter: none;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 6px 20px rgba(16, 24, 40, 0.06);
+}
+
+body.formal .panel:hover {
+  border-color: rgba(22, 56, 94, 0.35);
+  box-shadow: 0 2px 4px rgba(16, 24, 40, 0.06), 0 10px 28px rgba(16, 24, 40, 0.1);
+}
+
+/* botões: sólidos e arredondados */
+body.formal .btn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  border-radius: 8px;
+  border: 1px solid rgba(22, 56, 94, 0.4);
+  color: #16385e;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.08);
+}
+
+body.formal .btn:hover {
+  transform: translateY(-1px);
+  border-color: #16385e;
+  box-shadow: 0 4px 12px rgba(22, 56, 94, 0.18);
+  text-shadow: none;
+}
+
+body.formal .btn:active {
+  transform: translateY(0);
+}
+
+body.formal .btn-pink {
+  background: #16385e;
+  border-color: #16385e;
+  color: #fff;
+}
+
+body.formal .btn-pink:hover {
+  background: #1d4675;
+  color: #fff;
+}
+
+/* nav */
+body.formal .nav.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--line);
+}
+
+body.formal .nav-logo {
+  font-family: var(--font-pixel);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #16385e;
+  text-shadow: none;
+}
+
+body.formal .nav-links a:not(.btn) {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+body.formal .nav-links a:not(.btn):hover {
+  color: #16385e;
+  text-shadow: none;
+}
+
+body.formal .lang-toggle {
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #fff;
+}
+
+body.formal .lang-toggle span.on {
+  background: #16385e;
+  text-shadow: none;
+}
+
+/* hero */
+body.formal .hero-kicker {
+  background: none;
+  padding: 0;
+  color: #33608d;
+  text-shadow: none;
+  font-size: 0.85rem;
+}
+
+body.formal .hero-kicker::before {
+  content: '—';
+  color: #16385e;
+}
+
+body.formal .hero-title {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: 700;
+  color: #16385e;
+}
+
+body.formal .hero-title .alt {
+  color: #33608d;
+  text-shadow: none;
+}
+
+body.formal .hero-title:hover {
+  animation: none;
+}
+
+body.formal .hero-fullname {
+  background: none;
+  padding: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+body.formal .hero-stat {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  backdrop-filter: none;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+body.formal .hero-stat-value {
+  color: #16385e;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+body.formal .hero-scroll {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-shadow: none;
+  animation: none;
+}
+
+/* marquee de skills mais sóbrio */
+body.formal .marquee {
+  background: #fff;
+  border-color: var(--line);
+  backdrop-filter: none;
+}
+
+body.formal .marquee-track span {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+body.formal .marquee-track span::after {
+  content: '·';
+  color: #33608d;
+  text-shadow: none;
+  font-size: 1rem;
+}
+
+body.formal .marquee-track span:hover {
+  color: #16385e;
+  text-shadow: none;
+}
+
+/* seções */
+body.formal .section-num {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: #33608d;
+  text-shadow: none;
+}
+
+body.formal .section-title {
+  font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+  font-weight: 700;
+  color: #16385e;
+}
+
+body.formal .section-head::after {
+  background: var(--line);
+}
+
+/* mapa de história: nós redondos, rosa→navy */
+body.formal .history-map::before {
+  background: var(--line);
+}
+
+body.formal .history-item::before {
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+body.formal .history-pink {
+  --rail: rgba(51, 96, 141, 0.35);
+  --node: #33608d;
+  --node-glow: rgba(51, 96, 141, 0.25);
+}
+
+body.formal .history-map:not(.history-pink) {
+  --rail: rgba(22, 56, 94, 0.35);
+  --node: #16385e;
+  --node-glow: rgba(22, 56, 94, 0.25);
+}
+
+body.formal .history-period {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-shadow: none;
+}
+
+body.formal .history-org {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+body.formal .history-links a {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: none;
+}
+
+/* chips */
+body.formal .chip {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  border: none;
+  border-radius: 999px;
+  background: #eef2f7;
+  color: #44506a;
+  padding: 0.25rem 0.7rem;
+}
+
+body.formal .history-item:hover .chip,
+body.formal .sandbox-card:hover .chip {
+  background: #e3eaf3;
+  color: #16385e;
+}
+
+/* projetos */
+body.formal .sandbox-card {
+  border-radius: 12px;
+}
+
+body.formal .sandbox-cover {
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, #e8eef6 0%, #f6f8fb 60%),
+    #fff;
+}
+
+body.formal .sandbox-cover-mono {
+  font-family: var(--font-pixel);
+  color: rgba(22, 56, 94, 0.35);
+  text-shadow: none;
+}
+
+body.formal .sandbox-cover-placeholder {
+  border: 1.5px dashed rgba(51, 96, 141, 0.4);
+  border-radius: 8px;
+}
+
+body.formal .sandbox-cover-placeholder .big {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #33608d;
+  text-shadow: none;
+  animation: none;
+}
+
+body.formal .sandbox-cover-placeholder .small {
+  font-family: var(--font-body);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+body.formal .sandbox-live-badge {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #16385e;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+body.formal .sandbox-live-badge::before {
+  background: #2e9e63;
+  box-shadow: none;
+}
+
+body.formal .sandbox-year {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+}
+
+body.formal .sandbox-open {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: none;
+  color: #16385e;
+  text-shadow: none;
+}
+
+/* modal: profundidade suave, sem colchetes neon */
+body.formal .modal-overlay {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(255, 255, 255, 0.12), transparent 70%),
+    rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(12px) saturate(1.05);
+}
+
+body.formal .modal {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+}
+
+body.formal .modal::before,
+body.formal .modal::after {
+  display: none;
+}
+
+body.formal .modal-head {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--line);
+}
+
+body.formal .modal-kicker {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #33608d;
+  text-shadow: none;
+}
+
+body.formal .modal-close {
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  box-shadow: none;
+  font-family: var(--font-body);
+}
+
+body.formal .modal-close:hover {
+  border-color: #16385e;
+  color: #16385e;
+  transform: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+body.formal .modal-media-placeholder {
+  border: 1.5px dashed rgba(51, 96, 141, 0.4);
+  border-radius: 8px;
+}
+
+body.formal .modal-media-placeholder .big {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #33608d;
+  text-shadow: none;
+  animation: none;
+}
+
+/* footer */
+body.formal .footer {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  backdrop-filter: none;
+}
+
+body.formal .footer-title {
+  color: #16385e;
+  font-weight: 700;
+  animation: none;
+}
+
+body.formal .footer-email {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #33608d;
+  text-shadow: none;
+}
+
+body.formal .footer-email:hover {
+  color: #16385e;
+  text-shadow: none;
+}
+
+body.formal .footer-bottom {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+body.formal .footer-links a:hover {
+  color: #16385e;
+  text-shadow: none;
+}
+
+/* estados */
+body.formal .state-note {
+  font-family: var(--font-body);
+  text-transform: none;
+  border-radius: 10px;
+}
+
+body.formal .state-note.error {
+  color: #b3403c;
+  border-color: rgba(179, 64, 60, 0.4);
+}
+
+body.formal .skeleton {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(100deg, #fff 40%, #eef2f7 50%, #fff 60%);
+  background-size: 200% 100%;
 }

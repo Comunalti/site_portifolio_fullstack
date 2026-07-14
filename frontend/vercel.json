@@ -4,6 +4,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://site-portifolio-fullstack.onrender.com/api/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
     }
   ]
 }

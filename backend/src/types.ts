@@ -1,5 +1,7 @@
 export type Lang = 'pt' | 'en';
 
+export type Variant = 'gamer' | 'formal';
+
 export interface LinkRef {
   label: string;
   url: string;

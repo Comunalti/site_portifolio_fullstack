@@ -2,13 +2,14 @@ import type { ApiState } from '../api/client';
 import type { Profile } from '../api/types';
 import { Section, StateNote } from './Section';
 import { useReveal } from '../hooks/useReveal';
-import { UI, useLang } from '../i18n/LangContext';
+import { UI, useLang, useVariant } from '../i18n/LangContext';
 
 export function About({ profile }: { profile: ApiState<Profile> }) {
   const bioRef = useReveal<HTMLDivElement>();
   const metaRef = useReveal<HTMLDivElement>();
   const { lang } = useLang();
-  const t = UI[lang];
+  const variant = useVariant();
+  const t = UI[variant][lang];
   const p = profile.data;
 
   return (

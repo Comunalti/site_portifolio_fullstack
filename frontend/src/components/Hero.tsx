@@ -1,10 +1,11 @@
 import { api, type ApiState } from '../api/client';
 import type { Profile } from '../api/types';
-import { UI, useLang } from '../i18n/LangContext';
+import { UI, useLang, useVariant } from '../i18n/LangContext';
 
 export function Hero({ profile }: { profile: ApiState<Profile> }) {
   const { lang } = useLang();
-  const t = UI[lang];
+  const variant = useVariant();
+  const t = UI[variant][lang];
   const p = profile.data;
 
   return (
@@ -25,7 +26,7 @@ export function Hero({ profile }: { profile: ApiState<Profile> }) {
           <a className="btn btn-pink" href="#sandboxes">
             ▸ {t.viewSandboxes}
           </a>
-          <a className="btn" href={api.resumeUrl(lang)} download>
+          <a className="btn" href={api.resumeUrl(lang, variant)} download>
             ↓ {t.downloadResume}
           </a>
         </div>

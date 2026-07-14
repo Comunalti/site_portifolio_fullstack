@@ -1,5 +1,5 @@
 import { api, useApi } from './api/client';
-import { LangProvider, useLang } from './i18n/LangContext';
+import { LangProvider, useLang, useVariant } from './i18n/LangContext';
 import { ShaderBackground } from './components/ShaderBackground';
 import { Nav } from './components/Nav';
 import { Hero } from './components/Hero';
@@ -11,13 +11,14 @@ import { Footer } from './components/Footer';
 
 function Site() {
   const { lang } = useLang();
-  const profile = useApi(() => api.profile(lang), [lang]);
-  const history = useApi(() => api.history(lang), [lang]);
-  const projects = useApi(() => api.projects(lang), [lang]);
+  const variant = useVariant();
+  const profile = useApi(() => api.profile(lang, variant), [lang, variant]);
+  const history = useApi(() => api.history(lang, variant), [lang, variant]);
+  const projects = useApi(() => api.projects(lang, variant), [lang, variant]);
 
   return (
     <>
-      <ShaderBackground />
+      {variant === 'gamer' && <ShaderBackground />}
       <Nav />
       <main>
         <Hero profile={profile} />

@@ -2,7 +2,7 @@ import type { ApiState } from '../api/client';
 import type { History, HistoryEntry } from '../api/types';
 import { Section, StateNote } from './Section';
 import { useReveal } from '../hooks/useReveal';
-import { UI, useLang } from '../i18n/LangContext';
+import { UI, useLang, useVariant } from '../i18n/LangContext';
 
 function MapItem({ entry, index }: { entry: HistoryEntry; index: number }) {
   const ref = useReveal<HTMLDivElement>();
@@ -46,8 +46,9 @@ function HistoryMap({ entries, pink }: { entries: HistoryEntry[]; pink?: boolean
 
 export function ProfessionalHistory({ state }: { state: ApiState<History> }) {
   const { lang } = useLang();
+  const variant = useVariant();
   return (
-    <Section id="carreira" num="02" title={UI[lang].sectionProfessional}>
+    <Section id="carreira" num="02" title={UI[variant][lang].sectionProfessional}>
       {state.data ? (
         <HistoryMap entries={state.data.professional} />
       ) : (
@@ -59,8 +60,9 @@ export function ProfessionalHistory({ state }: { state: ApiState<History> }) {
 
 export function AcademicHistory({ state }: { state: ApiState<History> }) {
   const { lang } = useLang();
+  const variant = useVariant();
   return (
-    <Section id="academia" num="03" title={UI[lang].sectionAcademic}>
+    <Section id="academia" num="03" title={UI[variant][lang].sectionAcademic}>
       {state.data ? (
         <HistoryMap entries={state.data.academic} pink />
       ) : (

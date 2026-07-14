@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { useReveal } from '../hooks/useReveal';
-import { UI, useLang } from '../i18n/LangContext';
+import { UI, useLang, useVariant } from '../i18n/LangContext';
 
 interface SectionProps {
   id: string;
@@ -26,11 +26,12 @@ export function Section({ id, num, title, children }: SectionProps) {
 
 export function StateNote({ loading, error }: { loading: boolean; error: string | null }) {
   const { lang } = useLang();
+  const variant = useVariant();
   if (loading) return <div className="skeleton" />;
   if (error)
     return (
       <div className="state-note error">
-        {UI[lang].apiError} ({error})
+        {UI[variant][lang].apiError} ({error})
       </div>
     );
   return null;

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api/client';
-import { UI, useLang } from '../i18n/LangContext';
+import { UI, useLang, useVariant } from '../i18n/LangContext';
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const { lang, toggle } = useLang();
-  const t = UI[lang];
+  const variant = useVariant();
+  const t = UI[variant][lang];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -26,7 +27,8 @@ export function Nav() {
     <header className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
         <a href="#" className="nav-logo">
-          FELIPE.EXE<span className="cursor" />
+          {t.logo}
+          {variant === 'gamer' && <span className="cursor" />}
         </a>
         <nav className="nav-links">
           {links.map((l) => (
@@ -34,7 +36,10 @@ export function Nav() {
               {l.label}
             </a>
           ))}
-          <a className="btn btn-pink" href={api.resumeUrl(lang)} download>
+          <a className="nav-variant-switch" href={t.switchVariantHref} title={t.switchVariant}>
+            {variant === 'gamer' ? '▤' : '🕹'} {t.switchVariant}
+          </a>
+          <a className="btn btn-pink" href={api.resumeUrl(lang, variant)} download>
             ↓ {t.resume}
           </a>
           <button

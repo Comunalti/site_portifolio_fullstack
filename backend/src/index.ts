@@ -3,7 +3,7 @@ import cors from 'cors';
 import path from 'node:path';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { content, pickLang } from './data.js';
+import { content, pickLang, pickVariant } from './data.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -16,21 +16,23 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', uptime: process.uptime() });
 });
 
-// Todas as rotas de conteúdo aceitam ?lang=pt|en (padrão: pt)
+// Todas as rotas de conteúdo aceitam:
+//   ?lang=pt|en          (padrão: pt)
+//   ?variant=gamer|formal (padrão: gamer)
 app.get('/api/profile', (req, res) => {
-  res.json(content[pickLang(req.query.lang)].profile);
+  res.json(content[pickVariant(req.query.variant)][pickLang(req.query.lang)].profile);
 });
 
 app.get('/api/history', (req, res) => {
-  res.json(content[pickLang(req.query.lang)].history);
+  res.json(content[pickVariant(req.query.variant)][pickLang(req.query.lang)].history);
 });
 
 app.get('/api/projects', (req, res) => {
-  res.json(content[pickLang(req.query.lang)].projects);
+  res.json(content[pickVariant(req.query.variant)][pickLang(req.query.lang)].projects);
 });
 
 app.get('/api/projects/:id', (req, res) => {
-  const project = content[pickLang(req.query.lang)].projects.find(
+  const project = content[pickVariant(req.query.variant)][pickLang(req.query.lang)].projects.find(
     (p) => p.id === req.params.id,
   );
   if (!project) {
@@ -40,11 +42,14 @@ app.get('/api/projects/:id', (req, res) => {
   res.json(project);
 });
 
-// Download do currículo no idioma pedido (?lang=pt|en)
-// Os PDFs ficam em backend/assets/curriculo-pt.pdf e curriculo-en.pdf
+// Download do currículo no idioma e variante pedidos.
+// PDFs em backend/assets/: curriculo-pt.pdf, curriculo-en.pdf (gamer)
+//                          curriculo-formal-pt.pdf, curriculo-formal-en.pdf
 app.get('/api/resume', (req, res) => {
   const lang = pickLang(req.query.lang);
-  const resumePath = path.resolve(__dirname, '..', 'assets', `curriculo-${lang}.pdf`);
+  const variant = pickVariant(req.query.variant);
+  const file = variant === 'formal' ? `curriculo-formal-${lang}.pdf` : `curriculo-${lang}.pdf`;
+  const resumePath = path.resolve(__dirname, '..', 'assets', file);
   if (!fs.existsSync(resumePath)) {
     res.status(404).json({ error: 'Currículo ainda não disponível' });
     return;

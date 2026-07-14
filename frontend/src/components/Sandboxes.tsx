@@ -3,7 +3,7 @@ import type { ApiState } from '../api/client';
 import type { Project } from '../api/types';
 import { Section, StateNote } from './Section';
 import { useReveal } from '../hooks/useReveal';
-import { UI, useLang, type UIStrings } from '../i18n/LangContext';
+import { UI, useLang, useVariant, type UIStrings } from '../i18n/LangContext';
 
 function Cover({ project, t }: { project: Project; t: UIStrings }) {
   const { media, title, hue, mediaRequest } = project;
@@ -95,7 +95,7 @@ function Modal({ project, t, onClose }: { project: Project; t: UIStrings; onClos
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-head">
           <div>
-            <span className="modal-kicker">SANDBOX / {project.year}</span>
+            <span className="modal-kicker">{t.projectKicker} / {project.year}</span>
             <h3 className="modal-title">{project.title}</h3>
           </div>
           <button className="modal-close" onClick={onClose} aria-label={t.close}>
@@ -160,7 +160,8 @@ function Modal({ project, t, onClose }: { project: Project; t: UIStrings; onClos
 export function Sandboxes({ state }: { state: ApiState<Project[]> }) {
   const [open, setOpen] = useState<Project | null>(null);
   const { lang } = useLang();
-  const t = UI[lang];
+  const variant = useVariant();
+  const t = UI[variant][lang];
 
   return (
     <Section id="sandboxes" num="04" title={t.sectionSandboxes}>
