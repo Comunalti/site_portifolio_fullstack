@@ -94,19 +94,21 @@ export function ResumeHub() {
   }, [lang]);
 
   const copyLink = async (variant: Variant) => {
-    const url = new URL(`/${variant}-resume`, window.location.origin).toString();
+    const url = new URL(`/${variant}-resume`, window.location.origin);
+    url.searchParams.set('lang', lang);
+    const localizedUrl = url.toString();
     window.clearTimeout(resetTimer.current);
 
     try {
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(url);
+        await navigator.clipboard.writeText(localizedUrl);
       } else {
-        copyFallback(url);
+        copyFallback(localizedUrl);
       }
       setCopied(variant);
     } catch {
       try {
-        copyFallback(url);
+        copyFallback(localizedUrl);
         setCopied(variant);
       } catch {
         setCopied('error');
@@ -117,8 +119,8 @@ export function ResumeHub() {
   };
 
   const cards: Array<{ variant: Variant; href: string }> = [
-    { variant: 'formal', href: '/formal-resume' },
-    { variant: 'gamer', href: '/gamer-resume' },
+    { variant: 'formal', href: `/formal-resume?lang=${lang}` },
+    { variant: 'gamer', href: `/gamer-resume?lang=${lang}` },
   ];
 
   return (
@@ -129,7 +131,7 @@ export function ResumeHub() {
       <header className="hub-header">
         <a
           className="hub-brand"
-          href="/"
+          href={`/?lang=${lang}`}
           aria-label={`Felipe Peixoto — ${lang === 'pt' ? 'início' : 'home'}`}
         >
           <span className="hub-brand-mark">FP</span>

@@ -23,8 +23,16 @@ interface LangCtx {
 
 const Ctx = createContext<LangCtx>({ lang: 'pt', toggle: () => {} });
 
+function getLangFromUrl(): Lang | null {
+  const value = new URLSearchParams(window.location.search).get('lang');
+  return value === 'pt' || value === 'en' ? value : null;
+}
+
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(() => {
+    const urlLang = getLangFromUrl();
+    if (urlLang) return urlLang;
+
     const saved = localStorage.getItem('lang');
     return saved === 'en' ? 'en' : 'pt';
   });
@@ -32,6 +40,16 @@ export function LangProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     localStorage.setItem('lang', lang);
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
+    const url = new URL(window.location.href);
+    if (url.searchParams.get('lang') !== lang) {
+      url.searchParams.set('lang', lang);
+      window.history.replaceState(
+        window.history.state,
+        '',
+        `${url.pathname}${url.search}${url.hash}`,
+      );
+    }
   }, [lang]);
 
   return (
