@@ -165,8 +165,47 @@ const pt: SiteContent = {
         'Segunda geração da ferramenta de anotação de dados para IA. Cliente Flutter com download paralelo de imagens (menos espera entre tarefas), backend FastAPI e MongoDB. Um único fluxo flexível substituiu os quatro modos da versão anterior, e a configuração de tarefas e usuários migrou de arquivos estáticos para uma interface administrativa — qualquer pessoa da operação gerencia a plataforma sem apoio técnico.',
       tags: ['Flutter', 'FastAPI', 'MongoDB', 'Ferramentas internas'],
       year: '2025',
-      media: { type: 'none' },
-      mediaRequest: 'Envie screenshots do app (tela de anotação e configuração de tarefas).',
+      media: {
+        type: 'image',
+        imageUrl: '/sandboxes/annotation-platform-dashboard.png',
+        images: [
+          {
+            imageUrl: '/sandboxes/annotation-platform-classification.png',
+            alt: 'Tela de classificação da plataforma com caixas delimitadoras',
+            caption: 'Classificação de múltiplos objetos com bounding boxes e classes configuráveis.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-dashboard.png',
+            alt: 'Dashboard administrativo da plataforma de anotação',
+            caption: 'Dashboard com tarefas, metas, feedback e indicadores operacionais.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-tasks.png',
+            alt: 'Lista de tarefas disponíveis para classificação',
+            caption: 'Busca, ordenação e acompanhamento das tarefas de classificação.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-task-settings.png',
+            alt: 'Tela de configuração de uma tarefa de anotação',
+            caption: 'Configuração completa da tarefa por interface administrativa.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-upload.png',
+            alt: 'Tela de upload de imagens para uma tarefa de anotação',
+            caption: 'Seleção, pré-visualização e envio de imagens diretamente pela plataforma.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-classes.png',
+            alt: 'Configuração de classes da tarefa de anotação',
+            caption: 'Cadastro de classes, identificadores e cores utilizados na classificação.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-users.png',
+            alt: 'Seleção de usuários para uma tarefa de anotação',
+            caption: 'Distribuição de tarefas e controle dos usuários responsáveis.',
+          },
+        ],
+      },
       hue: 190,
     },
     {
@@ -384,8 +423,47 @@ const en: SiteContent = {
         'Second generation of the AI data-annotation tool. Flutter client with parallel image downloads (less waiting between tasks), FastAPI backend and MongoDB. A single flexible workflow replaced the previous four modes, and task/user configuration moved from static files to an admin interface — anyone in operations manages the platform without technical support.',
       tags: ['Flutter', 'FastAPI', 'MongoDB', 'Internal tooling'],
       year: '2025',
-      media: { type: 'none' },
-      mediaRequest: 'Send app screenshots (annotation screen and task configuration).',
+      media: {
+        type: 'image',
+        imageUrl: '/sandboxes/annotation-platform-dashboard.png',
+        images: [
+          {
+            imageUrl: '/sandboxes/annotation-platform-classification.png',
+            alt: 'Classification workspace with bounding boxes',
+            caption: 'Multi-object classification with bounding boxes and configurable classes.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-dashboard.png',
+            alt: 'Data-annotation platform admin dashboard',
+            caption: 'Dashboard with tasks, goals, feedback and operational indicators.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-tasks.png',
+            alt: 'List of available classification tasks',
+            caption: 'Search, sorting and progress tracking for classification tasks.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-task-settings.png',
+            alt: 'Data-annotation task configuration screen',
+            caption: 'Complete task configuration through the admin interface.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-upload.png',
+            alt: 'Image upload screen for a data-annotation task',
+            caption: 'Image selection, preview and upload directly through the platform.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-classes.png',
+            alt: 'Annotation task class configuration',
+            caption: 'Class names, identifiers and colors configured for classification.',
+          },
+          {
+            imageUrl: '/sandboxes/annotation-platform-users.png',
+            alt: 'User assignment for an annotation task',
+            caption: 'Task distribution and control of assigned users.',
+          },
+        ],
+      },
       hue: 190,
     },
     {
