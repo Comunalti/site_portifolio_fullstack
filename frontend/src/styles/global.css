@@ -1035,6 +1035,82 @@ img {
   background: #fff;
 }
 
+.modal-gallery {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.modal-gallery-stage {
+  margin: 0;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  background: rgba(3, 3, 10, 0.75);
+}
+
+.modal-gallery-stage img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #070711;
+}
+
+.modal-gallery-stage figcaption {
+  padding: 0.7rem 0.85rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.modal-gallery-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.7rem;
+}
+
+.modal-gallery-thumb {
+  width: 100%;
+  padding: 0.35rem;
+  border: 2px solid var(--line);
+  background: var(--panel-solid);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: border-color 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+.modal-gallery-thumb:hover,
+.modal-gallery-thumb:focus-visible,
+.modal-gallery-thumb.active {
+  border-color: var(--cyan);
+  opacity: 1;
+  outline: none;
+}
+
+.modal-gallery-thumb:hover {
+  transform: translateY(-2px);
+}
+
+.modal-gallery-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.modal-gallery-thumb span {
+  display: -webkit-box;
+  margin: 0.45rem 0.25rem 0.15rem;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .modal-media-placeholder {
   border: 2px dashed var(--cyan-dim);
   padding: 1.75rem;
@@ -1678,6 +1754,20 @@ body.formal .modal-close:hover {
   transform: none;
   box-shadow: none;
   text-shadow: none;
+}
+
+body.formal .modal-gallery-stage,
+body.formal .modal-gallery-thumb {
+  border-width: 1px;
+  border-radius: 9px;
+}
+
+body.formal .modal-gallery-stage img {
+  background: #101725;
+}
+
+body.formal .modal-gallery-thumb:hover {
+  transform: none;
 }
 
 body.formal .modal-media-placeholder {

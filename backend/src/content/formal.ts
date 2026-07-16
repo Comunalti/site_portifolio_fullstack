@@ -177,8 +177,27 @@ const pt: SiteContent = {
         'Primeira geração da ferramenta de anotação, nascida de uma iniciativa minha ao identificar o gargalo do processo manual (baixar ZIPs de imagens, classificar offline, subir de volta). Aplicação em C# com autenticação por usuário, imagens servidas por API e classificações sincronizadas em tempo real, com quatro fluxos configuráveis por usuário. Reduziu o retrabalho da operação e virou peça central do treinamento dos modelos.',
       tags: ['C#', 'APIs', 'Iniciativa própria', 'IA'],
       year: '2023 — 2024',
-      media: { type: 'none' },
-      mediaRequest: 'Envie um screenshot de qualquer um dos 4 fluxos de classificação do SGC.',
+      media: {
+        type: 'image',
+        imageUrl: '/sandboxes/sgc-label-me.png',
+        images: [
+          {
+            imageUrl: '/sandboxes/sgc-label-me.png',
+            alt: 'Tela do SGC com segmentação de imagem por polígono',
+            caption: 'Segmentação por polígonos no módulo Label Me.',
+          },
+          {
+            imageUrl: '/sandboxes/sgc-spacely.png',
+            alt: 'Tela do SGC com classificação por caixa delimitadora',
+            caption: 'Classificação por bounding box no módulo Spacely.',
+          },
+          {
+            imageUrl: '/sandboxes/sgc-login.png',
+            alt: 'Tela de autenticação do SGC',
+            caption: 'Autenticação individual para acesso às tarefas.',
+          },
+        ],
+      },
       hue: 260,
     },
     {
@@ -377,8 +396,27 @@ const en: SiteContent = {
         'First generation of the annotation tool, born from my own initiative after identifying the bottleneck in the manual process (downloading ZIPs of images, classifying offline, uploading back). A C# application with per-user authentication, images served via API and classifications synced in real time, with four user-configurable workflows. It cut operational rework and became a central piece of model training.',
       tags: ['C#', 'APIs', 'Own initiative', 'AI'],
       year: '2023 — 2024',
-      media: { type: 'none' },
-      mediaRequest: 'Send a screenshot of any of the 4 SGC classification workflows.',
+      media: {
+        type: 'image',
+        imageUrl: '/sandboxes/sgc-label-me.png',
+        images: [
+          {
+            imageUrl: '/sandboxes/sgc-label-me.png',
+            alt: 'SGC screen with polygon image segmentation',
+            caption: 'Polygon segmentation in the Label Me module.',
+          },
+          {
+            imageUrl: '/sandboxes/sgc-spacely.png',
+            alt: 'SGC screen with bounding-box classification',
+            caption: 'Bounding-box classification in the Spacely module.',
+          },
+          {
+            imageUrl: '/sandboxes/sgc-login.png',
+            alt: 'SGC authentication screen',
+            caption: 'Per-user authentication for task access.',
+          },
+        ],
+      },
       hue: 260,
     },
     {

@@ -186,8 +186,27 @@ const pt: SiteContent = {
         'Aos 19 anos, no 3º ano da faculdade, a ferramenta que eu dominava era a Unity — então usei ela. O SGC substituiu um fluxo manual de ZIPs por uma aplicação com login onde as imagens chegam por API e as classificações voltam ao servidor em tempo real. Quatro modos de classificação com ferramentas distintas, configuráveis por usuário via JSON no servidor. A prova de que ferramenta boa é a que resolve o problema.',
       tags: ['Unity', 'C#', 'APIs', 'IA', 'Ferramenta interna'],
       year: '2023 — 2024',
-      media: { type: 'none' },
-      mediaRequest: 'Envie screenshots do SGC (qualquer um dos 4 modos de classificação).',
+      media: {
+        type: 'image',
+        imageUrl: '/sandboxes/sgc-label-me.png',
+        images: [
+          {
+            imageUrl: '/sandboxes/sgc-label-me.png',
+            alt: 'Tela do SGC com segmentação de imagem por polígono',
+            caption: 'Segmentação por polígonos no módulo Label Me.',
+          },
+          {
+            imageUrl: '/sandboxes/sgc-spacely.png',
+            alt: 'Tela do SGC com classificação por caixa delimitadora',
+            caption: 'Classificação por bounding box no módulo Spacely.',
+          },
+          {
+            imageUrl: '/sandboxes/sgc-login.png',
+            alt: 'Tela de autenticação do SGC',
+            caption: 'Autenticação individual para acesso às tarefas.',
+          },
+        ],
+      },
       hue: 265,
     },
     {
@@ -400,8 +419,27 @@ const en: SiteContent = {
         'At 19, in my 3rd year of college, the tool I mastered was Unity — so I used it. SGC replaced a manual ZIP workflow with a logged-in application where images arrive via API and classifications flow back to the server in real time. Four classification modes with distinct toolsets, configured per user through a JSON on the server. Proof that a good tool is the one that solves the problem.',
       tags: ['Unity', 'C#', 'APIs', 'AI', 'Internal tool'],
       year: '2023 — 2024',
-      media: { type: 'none' },
-      mediaRequest: 'Send SGC screenshots (any of the 4 classification modes).',
+      media: {
+        type: 'image',
+        imageUrl: '/sandboxes/sgc-label-me.png',
+        images: [
+          {
+            imageUrl: '/sandboxes/sgc-label-me.png',
+            alt: 'SGC screen with polygon image segmentation',
+            caption: 'Polygon segmentation in the Label Me module.',
+          },
+          {
+            imageUrl: '/sandboxes/sgc-spacely.png',
+            alt: 'SGC screen with bounding-box classification',
+            caption: 'Bounding-box classification in the Spacely module.',
+          },
+          {
+            imageUrl: '/sandboxes/sgc-login.png',
+            alt: 'SGC authentication screen',
+            caption: 'Per-user authentication for task access.',
+          },
+        ],
+      },
       hue: 265,
     },
     {

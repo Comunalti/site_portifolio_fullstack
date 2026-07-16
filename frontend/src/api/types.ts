@@ -45,6 +45,11 @@ export interface Project {
     type: 'iframe' | 'image' | 'none';
     embedUrl?: string;
     imageUrl?: string;
+    images?: {
+      imageUrl: string;
+      alt: string;
+      caption?: string;
+    }[];
   };
   mediaRequest?: string;
   repoUrl?: string;

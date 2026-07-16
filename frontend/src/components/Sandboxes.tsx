@@ -7,6 +7,7 @@ import { UI, useLang, useVariant, type UIStrings } from '../i18n/LangContext';
 
 function Cover({ project, t }: { project: Project; t: UIStrings }) {
   const { media, title, hue, mediaRequest } = project;
+  const coverImage = media.imageUrl ?? media.images?.[0]?.imageUrl;
   return (
     <div className="sandbox-cover" style={{ '--card-hue': hue } as CSSProperties}>
       {media.type === 'iframe' && media.embedUrl ? (
@@ -21,8 +22,8 @@ function Cover({ project, t }: { project: Project; t: UIStrings }) {
             />
           </div>
         </>
-      ) : media.type === 'image' && media.imageUrl ? (
-        <img src={media.imageUrl} alt={title} loading="lazy" />
+      ) : media.type === 'image' && coverImage ? (
+        <img src={coverImage} alt={title} loading="lazy" />
       ) : mediaRequest ? (
         <div className="sandbox-cover-placeholder">
           <span className="big">▸ {t.mediaPending} ◂</span>
@@ -80,6 +81,14 @@ function Card({
 }
 
 function Modal({ project, t, onClose }: { project: Project; t: UIStrings; onClose: () => void }) {
+  const [activeImage, setActiveImage] = useState(0);
+  const images = project.media.images?.length
+    ? project.media.images
+    : project.media.imageUrl
+      ? [{ imageUrl: project.media.imageUrl, alt: project.title }]
+      : [];
+  const currentImage = images[activeImage] ?? images[0];
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     document.addEventListener('keydown', onKey);
@@ -111,12 +120,30 @@ function Modal({ project, t, onClose }: { project: Project; t: UIStrings; onClos
               sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
             />
           )}
-          {project.media.type === 'image' && project.media.imageUrl && (
-            <img
-              src={project.media.imageUrl}
-              alt={project.title}
-              style={{ border: '2px solid var(--line)' }}
-            />
+          {project.media.type === 'image' && currentImage && (
+            <div className="modal-gallery">
+              <figure className="modal-gallery-stage">
+                <img src={currentImage.imageUrl} alt={currentImage.alt} />
+                {currentImage.caption && <figcaption>{currentImage.caption}</figcaption>}
+              </figure>
+              {images.length > 1 && (
+                <div className="modal-gallery-thumbnails" aria-label={project.title}>
+                  {images.map((image, index) => (
+                    <button
+                      className={`modal-gallery-thumb ${activeImage === index ? 'active' : ''}`}
+                      type="button"
+                      key={image.imageUrl}
+                      onClick={() => setActiveImage(index)}
+                      aria-label={image.alt}
+                      aria-pressed={activeImage === index}
+                    >
+                      <img src={image.imageUrl} alt="" loading="lazy" />
+                      <span>{image.caption ?? image.alt}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           )}
           {project.media.type === 'none' && project.mediaRequest && (
             <div className="modal-media-placeholder">

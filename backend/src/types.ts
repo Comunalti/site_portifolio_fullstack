@@ -51,6 +51,11 @@ export interface Project {
     type: 'iframe' | 'image' | 'none';
     embedUrl?: string;
     imageUrl?: string;
+    images?: {
+      imageUrl: string;
+      alt: string;
+      caption?: string;
+    }[];
   };
   /** Pedido de mídia pendente — mostrado como placeholder no site */
   mediaRequest?: string;
