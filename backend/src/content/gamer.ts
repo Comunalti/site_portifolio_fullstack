@@ -18,6 +18,7 @@ const pt: SiteContent = {
     ],
     location: 'São Paulo, Brasil',
     email: 'frps2003@gmail.com',
+    phone: '(11) 96904-2003',
     links: [
       { label: 'GitHub', url: 'https://github.com/Comunalti' },
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/felipe-rodrigues-peixoto-da-silva-501919209/' },
@@ -289,6 +290,7 @@ const en: SiteContent = {
     ],
     location: 'São Paulo, Brazil',
     email: 'frps2003@gmail.com',
+    phone: '+55 (11) 96904-2003',
     links: [
       { label: 'GitHub', url: 'https://github.com/Comunalti' },
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/felipe-rodrigues-peixoto-da-silva-501919209/' },

@@ -9,6 +9,8 @@ Site de portfólio pessoal com uma página de seleção, **duas skins por rota**
   SOLID/boas práticas e gestão de pessoas, pensada para recrutadores
 - **Frontend**: React 18 + Vite + TypeScript (porta `5173`)
 - **Backend**: Node.js + Express + TypeScript (porta `3001`), conteúdo por variante e idioma
+- **Splash de inicialização**: consulta o readiness check do backend e só libera os
+  skeletons e componentes depois que a API confirma que o conteúdo está pronto
 - **Docker Compose** para o ambiente de desenvolvimento com hot-reload nos dois lados
 
 ### Como funciona o sistema de variantes
@@ -54,14 +56,31 @@ Todo o conteúdo do site vem da API, em **um único arquivo** com as versões `p
 
 | O quê | Onde |
 | --- | --- |
-| Nome, bio, skills, links, stats | `backend/src/data.ts` → `profile` (em `pt` e `en`) |
-| História profissional | `backend/src/data.ts` → `history.professional` |
-| História acadêmica | `backend/src/data.ts` → `history.academic` |
-| Sandboxes (projetos) | `backend/src/data.ts` → `projects` |
-| Currículo (PDF de download) | `backend/assets/curriculo-pt.pdf` e `curriculo-en.pdf` — edite o conteúdo em `tools/generate-resume.js` e regenere com `node tools/generate-resume.js` (requer `npm i puppeteer-core` e Chrome instalado) |
+| Nome, contato, bio, skills, links, stats | `backend/src/content/gamer.ts` e `formal.ts` → `profile` (em `pt` e `en`) |
+| História profissional | `backend/src/content/gamer.ts` e `formal.ts` → `history.professional` |
+| História acadêmica | `backend/src/content/gamer.ts` e `formal.ts` → `history.academic` |
+| Sandboxes (projetos) | `backend/src/content/gamer.ts` e `formal.ts` → `projects` |
+| Currículo (PDF de download) | `backend/assets/*.pdf` — edite `tools/generate-resume.js` e siga a seção de regeneração abaixo |
 | Screenshots dos sandboxes | coloque em `frontend/public/sandboxes/` |
 | Textos fixos da interface | `frontend/src/i18n/LangContext.tsx` → `UI` |
 | Shader de fundo (GLSL) | `frontend/src/components/ShaderBackground.tsx` |
+
+As instruções internas de mídia (`mediaRequest`) não são exibidas ao visitante. A
+interface mostra apenas "Mídia em breve", enquanto a descrição completa permanece no
+atributo `data-media-request`, consultável pelo desenvolvedor no inspetor do navegador.
+
+## Regenerando os currículos em PDF
+
+O gerador cria os quatro arquivos (gamer/formal, PT/EN) usando Chrome em modo headless:
+
+```bash
+npm install --prefix tools
+npm run generate --prefix tools
+```
+
+Os PDFs são gravados em `backend/assets/`. No Windows, o Chrome é detectado nos caminhos
+padrão. Em outro sistema, defina `CHROME_PATH` com o caminho do Chrome ou Chromium. Para
+também gerar HTML e PNG de depuração, execute com `RESUME_DEBUG=1`.
 
 ### Tipos de sandbox
 
@@ -79,7 +98,7 @@ Todas as rotas de conteúdo aceitam `?lang=pt|en` (padrão `pt`) e
 
 | Rota | Retorno |
 | --- | --- |
-| `GET /api/health` | status da API |
+| `GET /api/health` | readiness da API (`ready`, uptime e checks de conteúdo/assets) |
 | `GET /api/profile?lang=&variant=` | perfil (nome, bio, skills, links, stats) |
 | `GET /api/history?lang=&variant=` | `{ professional: [...], academic: [...] }` |
 | `GET /api/projects?lang=&variant=` | projetos/sandboxes |

@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import { api, useApi } from './api/client';
 import { isResumeHubPath, LangProvider, useLang, useVariant } from './i18n/LangContext';
 import { ShaderBackground } from './components/ShaderBackground';
@@ -9,8 +10,18 @@ import { ProfessionalHistory, AcademicHistory } from './components/History';
 import { Sandboxes } from './components/Sandboxes';
 import { Footer } from './components/Footer';
 import { ResumeHub } from './components/ResumeHub';
+import { BackendSplash } from './components/BackendSplash';
 
 function Site() {
+  const [backendReady, setBackendReady] = useState(false);
+  const handleReady = useCallback(() => setBackendReady(true), []);
+
+  if (!backendReady) return <BackendSplash onReady={handleReady} />;
+
+  return <ReadySite />;
+}
+
+function ReadySite() {
   const { lang } = useLang();
   const variant = useVariant();
   const profile = useApi(() => api.profile(lang, variant), [lang, variant]);

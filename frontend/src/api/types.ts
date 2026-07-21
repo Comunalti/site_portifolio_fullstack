@@ -14,6 +14,7 @@ export interface Profile {
   bio: string[];
   location: string;
   email: string;
+  phone: string;
   links: LinkRef[];
   skills: string[];
   stats: { label: string; value: string }[];

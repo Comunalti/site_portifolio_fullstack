@@ -1190,6 +1190,103 @@ img {
   text-shadow: 0 0 12px var(--pink-dim);
 }
 
+.footer-phone {
+  display: block;
+  width: fit-content;
+  margin: 0.35rem auto 1.5rem;
+  color: var(--muted);
+  font-family: var(--font-term);
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-phone:hover { color: var(--cyan); }
+
+.contact-btn .contact-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  font-family: Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.whatsapp-btn { color: #55e78b; border-color: rgba(37, 211, 102, 0.5); }
+.whatsapp-btn .contact-icon { color: #07160d; background: #25d366; }
+.linkedin-btn { color: #65b9ff; border-color: rgba(10, 102, 194, 0.55); }
+.linkedin-btn .contact-icon { color: #fff; background: #0a66c2; font-size: 0.75rem; }
+
+/* ---------- backend readiness splash ---------- */
+
+.backend-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding: 1.5rem;
+  background: #070613;
+  overflow: hidden;
+}
+
+.backend-splash::before {
+  content: '';
+  position: absolute;
+  width: min(70vw, 760px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(77, 227, 255, 0.17), transparent 67%);
+  animation: splash-pulse 2.4s ease-in-out infinite;
+}
+
+.backend-splash-card {
+  position: relative;
+  width: min(100%, 620px);
+  padding: clamp(2rem, 6vw, 4rem);
+  border: 2px solid var(--cyan-dim);
+  background: rgba(8, 7, 23, 0.9);
+  box-shadow: 10px 10px 0 rgba(255, 46, 136, 0.2), 0 0 80px rgba(77, 227, 255, 0.08);
+}
+
+.backend-splash-mark {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--pink);
+  color: var(--pink);
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+}
+
+.backend-splash-eyebrow { color: var(--cyan); font-family: var(--font-term); letter-spacing: 0.18em; text-transform: uppercase; }
+.backend-splash h1 { margin: 0.45rem 0 0.8rem; font-family: var(--font-pixel); font-size: clamp(1.15rem, 3.5vw, 2rem); line-height: 1.55; }
+.backend-splash-detail { color: var(--muted); font-size: 1.05rem; }
+.backend-progress { height: 10px; margin-top: 2rem; padding: 2px; border: 1px solid var(--cyan-dim); }
+.backend-progress span { display: block; height: 100%; background: linear-gradient(90deg, var(--cyan), var(--pink)); transition: width 0.45s ease; }
+.backend-progress-meta { display: flex; justify-content: space-between; margin-top: 0.65rem; color: var(--muted); font-family: var(--font-term); text-transform: uppercase; letter-spacing: 0.08em; }
+.backend-progress-meta strong { color: var(--cyan); }
+
+.backend-splash-formal { background: #eef2f7; color: #15283d; }
+.backend-splash-formal::before { background: radial-gradient(circle, rgba(41, 86, 132, 0.14), transparent 67%); }
+.backend-splash-formal .backend-splash-card { border: 1px solid #b8c6d5; border-top: 5px solid #16385e; background: rgba(255, 255, 255, 0.96); box-shadow: 0 24px 70px rgba(21, 40, 61, 0.14); }
+.backend-splash-formal .backend-splash-mark { border: 0; border-radius: 50%; background: #16385e; color: #fff; font-family: Georgia, serif; font-size: 1.1rem; }
+.backend-splash-formal .backend-splash-eyebrow { color: #58718a; font-family: Arial, sans-serif; font-size: 0.72rem; font-weight: 700; }
+.backend-splash-formal h1 { font-family: Georgia, serif; font-size: clamp(2rem, 5vw, 3.3rem); font-weight: 500; line-height: 1.1; }
+.backend-splash-formal .backend-splash-detail,
+.backend-splash-formal .backend-progress-meta { color: #65778a; }
+.backend-splash-formal .backend-progress { height: 8px; border-color: #c0ccd8; background: #e2e8ef; padding: 0; }
+.backend-splash-formal .backend-progress span { background: linear-gradient(90deg, #16385e, #6287ab); }
+.backend-splash-formal .backend-progress-meta { font-family: Arial, sans-serif; font-size: 0.72rem; }
+.backend-splash-formal .backend-progress-meta strong { color: #16385e; }
+
+@keyframes splash-pulse { 50% { transform: scale(1.08); opacity: 0.65; } }
+
 .footer-bottom {
   margin-top: clamp(2.5rem, 7vh, 4.5rem);
   padding-top: 1.4rem;

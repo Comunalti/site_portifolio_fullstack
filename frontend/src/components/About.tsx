@@ -34,6 +34,12 @@ export function About({ profile }: { profile: ApiState<Profile> }) {
               <span className="term k">{t.email}</span>
               <a href={`mailto:${p.email}`}>{p.email}</a>
             </div>
+            <div className="about-meta-row">
+              <span className="term k">{t.phone}</span>
+              <a href="https://wa.me/5511969042003" target="_blank" rel="noreferrer">
+                {p.phone} ↗
+              </a>
+            </div>
             {p.links.map((l) => (
               <div className="about-meta-row" key={l.label}>
                 <span className="term k">{l.label}</span>

@@ -11,6 +11,11 @@ async function get<T>(path: string, lang: Lang, variant: Variant): Promise<T> {
 }
 
 export const api = {
+  health: async () => {
+    const res = await fetch(`${BASE}/health`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`API health → ${res.status}`);
+    return res.json() as Promise<{ ready: boolean; status: string }>;
+  },
   profile: (lang: Lang, variant: Variant) => get<Profile>('/profile', lang, variant),
   history: (lang: Lang, variant: Variant) => get<History>('/history', lang, variant),
   projects: (lang: Lang, variant: Variant) => get<Project[]>('/projects', lang, variant),

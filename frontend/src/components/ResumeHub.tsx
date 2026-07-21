@@ -174,6 +174,9 @@ export function ResumeHub() {
             </div>
             <div className="hub-socials">
               <a href="mailto:frps2003@gmail.com">Email ↗</a>
+              <a href="https://wa.me/5511969042003" target="_blank" rel="noreferrer">
+                WhatsApp · {lang === 'pt' ? '(11) 96904-2003' : '+55 (11) 96904-2003'} ↗
+              </a>
               <a href="https://github.com/Comunalti" target="_blank" rel="noreferrer">GitHub ↗</a>
               <a
                 href="https://www.linkedin.com/in/felipe-rodrigues-peixoto-da-silva-501919209/"

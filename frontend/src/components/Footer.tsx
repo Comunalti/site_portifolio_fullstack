@@ -10,6 +10,8 @@ export function Footer({ profile }: { profile: ApiState<Profile> }) {
   const t = UI[variant][lang];
   const p = profile.data;
   const year = new Date().getFullYear();
+  const linkedin = p?.links.find((link) => link.label === 'LinkedIn')?.url ??
+    'https://www.linkedin.com/in/felipe-rodrigues-peixoto-da-silva-501919209/';
 
   return (
     <footer id="contato" className="footer">
@@ -21,12 +23,19 @@ export function Footer({ profile }: { profile: ApiState<Profile> }) {
           <a className="footer-email" href={`mailto:${p?.email ?? ''}`}>
             {p?.email ?? '...'}
           </a>
+          {p?.phone && <a className="footer-phone" href="https://wa.me/5511969042003" target="_blank" rel="noreferrer">{p.phone}</a>}
           <div className="hero-actions" style={{ marginTop: 0, justifyContent: 'center' }}>
             <a className="btn btn-pink" href={`mailto:${p?.email ?? ''}`}>
               ▸ {t.sendEmail}
             </a>
             <a className="btn" href={api.resumeUrl(lang, variant)} download>
               ↓ {t.downloadResume}
+            </a>
+            <a className="btn contact-btn whatsapp-btn" href="https://wa.me/5511969042003" target="_blank" rel="noreferrer">
+              <span className="contact-icon" aria-hidden="true">WA</span> {t.whatsapp}
+            </a>
+            <a className="btn contact-btn linkedin-btn" href={linkedin} target="_blank" rel="noreferrer">
+              <span className="contact-icon" aria-hidden="true">in</span> {t.linkedin}
             </a>
           </div>
         </div>

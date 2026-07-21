@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-resume-tools",
+  "private": true,
+  "scripts": {
+    "generate": "node generate-resume.js"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.16.0"
+  }
+}

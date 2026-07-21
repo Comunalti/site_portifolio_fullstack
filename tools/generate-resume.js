@@ -5,7 +5,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const ASSETS = 'C:\\Users\\frps2\\Projetos\\site_portifolio_fullstack\\backend\\assets';
+const ASSETS = path.resolve(__dirname, '..', 'backend', 'assets');
 
 // ---------------- GAMER (base) ----------------
 
@@ -13,7 +13,7 @@ const gamerPt = {
   accent: '#c2185b',
   accent2: '#1c9ec9',
   title: 'Engenheiro da Computação · Desenvolvedor Full-Stack',
-  contact: 'São Paulo, Brasil · frps2003@gmail.com · github.com/Comunalti',
+  contact: 'São Paulo, Brasil · (11) 96904-2003 · frps2003@gmail.com · github.com/Comunalti · LinkedIn: Felipe Peixoto',
   labels: {
     summary: 'Resumo',
     experience: 'Experiência Profissional',
@@ -100,7 +100,7 @@ const gamerEn = {
   accent: '#c2185b',
   accent2: '#1c9ec9',
   title: 'Computer Engineer · Full-Stack Developer',
-  contact: 'São Paulo, Brazil · frps2003@gmail.com · github.com/Comunalti',
+  contact: 'São Paulo, Brazil · +55 (11) 96904-2003 · frps2003@gmail.com · github.com/Comunalti · LinkedIn: Felipe Peixoto',
   labels: {
     summary: 'Summary',
     experience: 'Professional Experience',
@@ -427,8 +427,19 @@ function html(d) {
 
 (async () => {
   const puppeteer = (await import('puppeteer-core')).default;
+  const chromeCandidates = [
+    process.env.CHROME_PATH,
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+    '/usr/bin/google-chrome',
+    '/usr/bin/chromium',
+  ].filter(Boolean);
+  const executablePath = chromeCandidates.find((candidate) => fs.existsSync(candidate));
+  if (!executablePath) throw new Error('Chrome/Chromium não encontrado. Defina a variável CHROME_PATH.');
+
+  fs.mkdirSync(ASSETS, { recursive: true });
   const browser = await puppeteer.launch({
-    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    executablePath,
     headless: 'new',
     args: ['--no-sandbox'],
   });
@@ -438,18 +449,22 @@ function html(d) {
       const page = await browser.newPage();
       const content = html(data);
       const suffix = variant === 'formal' ? `formal-${lang}` : lang;
-      fs.writeFileSync(path.join(__dirname, `resume_${variant}_${lang}.html`), content);
+      if (process.env.RESUME_DEBUG === '1') {
+        fs.writeFileSync(path.join(__dirname, `resume_${variant}_${lang}.html`), content);
+      }
       await page.setContent(content, { waitUntil: 'load' });
       await page.pdf({
         path: path.join(ASSETS, `curriculo-${suffix}.pdf`),
         format: 'A4',
         printBackground: true,
       });
-      await page.setViewport({ width: 900, height: 1272 });
-      await page.screenshot({
-        path: path.join(__dirname, `resume_${variant}_${lang}.png`),
-        fullPage: true,
-      });
+      if (process.env.RESUME_DEBUG === '1') {
+        await page.setViewport({ width: 900, height: 1272 });
+        await page.screenshot({
+          path: path.join(__dirname, `resume_${variant}_${lang}.png`),
+          fullPage: true,
+        });
+      }
       await page.close();
       console.log(`gerado curriculo-${suffix}.pdf`);
     }

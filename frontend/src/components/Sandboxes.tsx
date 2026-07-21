@@ -25,7 +25,7 @@ function Cover({ project, t }: { project: Project; t: UIStrings }) {
       ) : media.type === 'image' && coverImage ? (
         <img src={coverImage} alt={title} loading="lazy" />
       ) : mediaRequest ? (
-        <div className="sandbox-cover-placeholder">
+        <div className="sandbox-cover-placeholder" data-media-request={mediaRequest}>
           <span className="big">▸ {t.mediaPending} ◂</span>
           <span className="small">{title}</span>
         </div>
@@ -146,11 +146,9 @@ function Modal({ project, t, onClose }: { project: Project; t: UIStrings; onClos
             </div>
           )}
           {project.media.type === 'none' && project.mediaRequest && (
-            <div className="modal-media-placeholder">
+            <div className="modal-media-placeholder" data-media-request={project.mediaRequest}>
               <span className="big">▸ {t.mediaPending} ◂</span>
-              <span className="small">
-                {t.mediaRequestLabel} {project.mediaRequest}
-              </span>
+              <span className="small">{t.mediaRequestLabel}</span>
             </div>
           )}
           <p className="modal-desc">{project.description}</p>

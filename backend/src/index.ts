@@ -8,12 +8,46 @@ import { content, pickLang, pickVariant } from './data.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = Number(process.env.PORT ?? 3001);
+const startedAt = new Date().toISOString();
 
 app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok', service: 'portfolio-api', uptime: process.uptime() });
+  const variantsReady = Object.values(content).every(
+    (localizedContent) => localizedContent.pt?.profile && localizedContent.en?.profile,
+  );
+  const requiredAssets = [
+    'curriculo-pt.pdf',
+    'curriculo-en.pdf',
+    'curriculo-formal-pt.pdf',
+    'curriculo-formal-en.pdf',
+  ];
+  const assetsReady = requiredAssets.every((file) =>
+    fs.existsSync(path.resolve(__dirname, '..', 'assets', file)),
+  );
+  const ready = Boolean(variantsReady && assetsReady);
+
+  if (!ready) {
+    res.status(503).json({
+      status: 'starting',
+      ready: false,
+      service: 'portfolio-api',
+      uptime: process.uptime(),
+      startedAt,
+      checks: { content: variantsReady ? 'ok' : 'pending', assets: assetsReady ? 'ok' : 'pending' },
+    });
+    return;
+  }
+
+  res.json({
+    status: 'ok',
+    ready: true,
+    service: 'portfolio-api',
+    uptime: process.uptime(),
+    startedAt,
+    checks: { content: 'ok', assets: 'ok' },
+  });
 });
 
 // Todas as rotas de conteúdo aceitam:
